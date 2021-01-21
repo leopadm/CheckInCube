@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: Montserrat, sans-serif;
+}
+
+.navigation{
+    background-color: black;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 80px;
+    display: inline-block;
+}
+
+
+.LogoWS{
+    padding: 0;
+    height: 80px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 48%;
+}
+
+
+.Menu{
+    padding: 1rem;
+    position: absolute;
+    right: 20px;
+}
+
+
+.Menu a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: larger;
+    margin-right: 20px;
+    padding: 0.5rem
+}
+
+
+.TopText:hover{
+    border-radius: 50px;
+    background-color: #777777;
+    transform: scale(1.2);
+}
+
+
+.icone{
+    height: 60px;
+    margin-right: 0;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+ul{
+    list-style: none;
+    display: inline-block;
+}
+
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+
+.langues{
+    margin: 0;
+    padding: 0;
+}
+
+
+.icone:hover{
+    transform: scale(1.2);
+}
+
+body{
+    background: url("Ressources/Medias/Image26.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+
+
+.wrapper{
+    margin-top: 15%;
+    width: 100%;
+    padding: 0 20px;
+    color: #293133;
+}
+
+.formulaire{
+    max-width: 550px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.8);
+    padding: 30px;
+    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.13);
+}
+
+
+#partie1,
+#coordonnées,
+#upload{
+    display: flex;
+    flex-direction: column;
+    margin-right: 4%;
+    padding-bottom: 8%;
+}
+
+#partie1 label,
+#upload label{
+    line-height: 40px;
+}
+
+/*Style boutons radio*/
+@keyframes click-wave {
+    0% {
+        position: relative;
+        height: 20px;
+        width: 20px;
+        opacity: 0.35;
+    }
+    100% {
+        height: 200px;
+        width: 200px;
+        margin-left: -80px;
+        margin-top: -80px;
+        opacity: 0;
+    }
+}
+.option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    transition: all 0.15s ease-out 0s;
+    background: floralwhite;
+    border: solid 1px grey;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    z-index: 1000;
+    vertical-align: middle;
+}
+.option-input:hover {
+    background: #9faab7;
+}
+.option-input:checked {
+    background: #FECB00;
+}
+.option-input:checked::before {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 26.66667px;
+    text-align: center;
+    line-height: 20px;
+}
+.option-input:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #FECB00;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+.option-input.radio {
+    border-radius: 50%;
+}
+.option-input.radio::after {
+    border-radius: 50%;
+}
+
+
+
+/*style champs de saisie*/
+#coordonnées .input{
+    margin: 10px 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #FECB00;
+    padding: 10px;
+    color: #293133;
+    width: 100%;
+}
+
+.titre{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+/* style bouton */
+#submit {
+    margin-left: 25px;
+    padding: 10px;
+    font-family: Montserrat, sans-serif;
+    font-size: small;
+    border: 1px solid #FECB00;
+    background-color: #FECB00;
+    color: dimgrey;
+    height: 5%;
+    margin-left: 10%;
+}
+
+
+#submit:hover {
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+
+/*différents moteur de recherche*/
+::-webkit-input-placeholder{
+    color: dimgrey;
+}
+
+::-moz-input-placeholder{
+    color: dimgrey;
+}
+
+::-ms-input-placeholder{
+    color: dimgrey;
+}

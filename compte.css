@@ -1,0 +1,200 @@
+body{
+	margin: 0;
+	padding: 0;
+	width:100%;
+	background-color: white;
+}
+
+
+.bgim
+{
+    padding: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+
+a{
+    color: black;
+}
+
+
+nav{
+	position: fixed;
+	width: 100%;
+    height: 70px;
+	background: rgba(0,0,0,0);
+    margin: 0;
+    top:0;
+    display: inline-block;
+    font-family: Montserrat, sans-serif;
+    font-size: medium;
+}
+
+nav ul{
+	padding: 0;
+	text-align: left;
+	align-content: left;
+	margin:0;
+	list-style-type: none;
+	float: left;
+
+
+}
+
+
+nav a:hover
+{
+    border-top: 2px solid black;
+}
+
+
+nav ul li{
+	display: inline-block;
+	padding: 12px;
+    position: relative;
+}
+
+nav ul li a{
+	display: block;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a
+{
+    border: 3px solid transparent;
+}
+
+
+
+nav a:hover{
+    border-bottom: solid gold;
+    border-width: 3px;
+    transition-duration: 0.5s;
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 0px 0px #CCC;
+    background-color: rgba(0,0,0,0);
+    margin-left: -10%;
+    position: absolute;
+    width: 90%;
+    z-index: 1000;
+}
+nav > ul li:hover .sous{
+    display: block;
+}
+.sous li{
+    float: none;
+    width: 90%;
+    text-align: center;
+}
+.sous a{
+    padding: 2px;
+}
+
+.sous a:hover{
+    background-color: RGBa(200,200,200,0.1);
+}
+.deroulant > a::after{
+    content:" ▼";
+    font-size: 12px;
+}
+
+.sous1{
+    display: none;
+    box-shadow: 0px 0px 0px #CCC;
+    background-color: rgba(0,0,0,0);
+    position: absolute;
+    width: 300%;
+    margin-left: -110%;
+    z-index: 1000;
+
+}
+
+nav > ul li:hover .sous1{
+    display: block;
+
+}
+
+.sous1 li{
+    float: none;
+    width: 90%;
+    text-align: center;
+}
+
+
+.sous1 a{
+    padding: 2px;
+}
+
+
+.sous1 a:hover{
+    background-color: RGBa(200,200,200,0.1);
+}
+
+
+.deroulant1 > a::after{
+    content:" ▼";
+    font-size: 12px;
+}
+
+
+.accueil{
+	left:1%;
+    margin-top:7px;
+    font-weight: 900;
+}
+
+.deroulant1{
+    margin-left: 10px;
+    margin-top:12px;
+}
+
+.deroulant{
+    left: 1%;
+    margin-top:7px;
+}
+
+.welcome{
+    left: 190%;
+    margin-top:12px;
+}
+
+.about {
+    left:1%;
+    margin-top:12px;
+
+}
+.contact{
+    left:1%;
+    margin-top:10px;
+
+}
+
+
+#compte{
+	padding: 5px;
+	width: 19%;
+	height: 50%;
+	background-color: rgba(255,255,255,0.4);
+	margin-top: 13%;
+	margin-left: 6%;
+	font-size: 20px;
+	text-align: center;
+	border-radius: 30px;
+}
+
+
+nav:hover
+{
+    font-size: medium;
+}

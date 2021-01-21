@@ -1,0 +1,365 @@
+body{
+    margin: 0;
+    padding: 0;
+    width:100%;
+    background-color: grey;
+}
+
+
+nav{
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background: #000;
+    margin: 0;
+    top:0;
+    display: inline-block;
+}
+
+
+nav ul{
+    padding: 0;
+    text-align: left;
+    align-content: left;
+    margin:0;
+    list-style-type: none;
+    float: left;
+}
+
+
+nav ul li{
+    display: inline-block;
+    padding: 12px;
+    position: relative;
+}
+
+
+nav ul li a{
+    display: block;
+    text-decoration: none;
+    color:#fff;
+    font-size: 20px;
+}
+
+
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+nav a:hover{
+    color: orange;
+    border-bottom: 2px solid gold;
+}
+
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: black;
+    position: absolute;
+    width: 90%;
+    z-index: 1000;
+}
+
+
+nav > ul li:hover .sous{
+    display: block;
+}
+
+
+.sous li{
+    float: none;
+    width: 70%;
+    text-align: center;
+}
+
+
+.sous a{
+    padding: 2px;
+    border-bottom: none;
+}
+
+
+.sous a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,200,200,0.1);
+}
+
+
+.deroulant > a::after{
+    content:" ▼";
+    font-size: 12px;
+}
+
+
+.sous1{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: black;
+    position: absolute;
+    width: 300%;
+    z-index: 1000;
+
+}
+
+
+nav > ul li:hover .sous1{
+    display: block;
+
+}
+
+
+.sous1 li{
+    float: none;
+    width: 90%;
+    text-align: center;
+}
+
+
+.sous1 a{
+    padding: 2px;
+    border-bottom: none;
+}
+
+
+.sous1 a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,200,200,0.1);
+}
+
+
+.deroulant1 > a::after{
+    content:" ▼";
+    font-size: 12px;
+}
+
+
+#bloc{
+    float:left;
+    background-color: #000;
+    color: #000;
+    margin-top: 6%;
+    margin-left: 2%;
+    width: 96%;
+    height: 45%;
+    border-radius: 30px;
+
+
+}
+
+
+#recherche{
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    float: left;
+    margin-left: 2%;
+    margin-top: 6%;
+    font-size: 20px;
+    background-color:#000;
+    width: 96%;
+    height: 45%;
+    border-radius: 30px;
+
+}
+
+
+#rechercher{
+    float: left;
+    margin-left: 2%;
+    margin-top: 1%;
+    color:#fff;
+    width: 96%;
+    height: 37%;
+    border-radius: 30px;
+
+
+}
+
+
+#bloc{
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    float:left;
+    width: 96%;
+    height: 20%;
+    background-color:#000;
+    color:#fff;
+    margin-top: 3%;
+    margin-left: 2%;
+    font-size: 20px;
+    border-radius: 30px;
+
+}
+
+
+#analyses{
+    float:left;
+    width: 96%;
+    height: 20%;
+    background-color:#000;
+    font-size: 20px;
+    color:#fff;
+    margin-top: 1%;
+    margin-left: 2%;
+    border-radius: 30px;
+}
+
+
+#image{
+    float: left;
+    margin-left: 2%;
+    margin-top: 1%;
+    color:#000;
+    width: 96%;
+    height: 37%;
+}
+
+
+#Contact{
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    float:left;
+    width: 96%;
+    height: 20%;
+    background-color:grey;
+    color:grey;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+
+#contacter{
+    float:left;
+    width: 96%;
+    height: 10%;
+    background-color:grey;
+    color:grey;
+    margin-top: 1%;
+    margin-left: 2%;
+    text-align: center;
+}
+
+
+#Rdv{
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    float:left;
+    width: 96%;
+    height: 20%;
+    background-color:#000;
+    color:#fff;
+    margin-top: 3%;
+    margin-left: 2%;
+    border-radius: 30px;
+}
+
+
+#reservation{
+    float:left;
+    width: 96%;
+    height: 20%;
+    background-color:#000;
+    font-size: 20px;
+    font-family: Montserrat sans-serif;
+    color:#fff;
+    margin-top: 2%;
+    margin-left: 2%;
+    border-radius: 30px;
+}
+
+
+#searchbar{
+    position:relative;
+    width:1040px;
+    height:auto;
+}
+
+
+.formulaire{
+    display:inline-block;
+}
+
+
+.formulaire.champ{
+    width:600px;
+    height:35px;
+}
+
+
+.formulaire.bouton{
+    background-image: url(images/searchbar_button.png);
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+}
+
+
+#saut{
+    color:black;
+}
+
+
+#fin{
+    background-color:grey;
+}
+
+
+.formulaire{
+    width: 100%;
+}
+
+
+.champ{
+    width: 80%;
+}
+
+
+.LogoWS{
+    padding: 0;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 2700%;
+}
+
+
+.deroulant1{
+    margin-left: 10px;
+    top:10px;
+}
+
+
+.deroulant{
+    left: 1%;
+    top:10px;
+}
+
+
+.welcome{
+    left: 190%;
+    top:10px;
+    margin-right: 1rem;
+}
+
+
+.about {
+    left:1%;
+    top:10px;
+}
+
+
+.contact{
+    left:1%;
+    top:10px;
+}
+
+
+.LogoWS:hover{
+    transform: scale(1.2);
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="inscription_piloteCSS.css">
+</head>
+<body>
+<h1>
+    INSCRIPTION
+</h1>
+
+<div id="upload">
+    <form action="writeValuesFr.php" method="post" enctype="multipart/form-data">
+        <p>Formulaire d'envoi de fichier</p>
+        <label> Joindre ma pièce d'identité </label> <br/>
+        <input type="hidden" name="MAX_FILE_SIZE" value="100" /> <input name="file" type="file" /> <br/>
+        <label> Joindre ma licence </label> <br/>
+        <input type="hidden" name="MAX_FILE_SIZE" value="100" /> <input name="file" type="file" /> <br/>
+        <input type="submit" value="Envoyer mes documents" id="submit">
+    </form>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+label {
+    display: block;
+    font-family: Montserrat, sans-serif;
+    font-weight: inherit;
+    color: #000000;
+}
+
+input[type='submit'],
+label {
+    margin-top: 1rem;
+}
+
+.LogIn{
+    width: 180px;
+    height: 40px;
+    text-align: center;
+    background-color: #777777;
+    border: #777777;
+    border-radius: 10px;
+}
+
+.LogIn:hover{
+    background-color: #777777;
+    /*transform: scale(1.2);*/
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+}
+
+
+.Window{
+    font-family: Montserrat, sans-serif;
+    width: 20%;
+    height: 40%;
+    background-color: white;
+    border: white;
+    border-radius: 50px;
+    position: absolute;
+    top: 250px;
+    margin-right: 40%;
+    margin-left: 40%;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 1rem;
+}
+
+
+.Sub1{
+    flex: 1;
+    font-weight: 800;
+    font-size: larger;
+    margin: 2.2rem auto 0.5rem;
+}
+
+
+.Sub2{
+    flex: 2;
+    margin: 0.5rem auto;
+}
+
+
+.Sub3{
+    flex: 3;
+    margin: 0.5rem auto;
+}
+
+
+.Sub4{
+    flex: 4;
+    margin: 1rem auto auto;
+    font-family: Montserrat, sans-serif;
+}
+
+
+body{
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+
+.button{
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+}
+
+input[type=submit]{
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+    font-size: larger;
+    color: white;
+}
+
+
+.ImageBG{
+    position: fixed;
+    top: 0;
+    margin-top: -15rem;
+    height: 100%;
+}
+
+
+.total{
+    position: absolute;
+}

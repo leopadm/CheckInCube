@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Montserrat, sans-serif;
+    font-size: small;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-height:800px) {
+    footer{
+        position:static
+    }
+}
+
+.footer-distributed{
+    background-color: black;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 50px 50px 60px 50px;
+    margin-top: 80px;
+}
+
+/* Position des différents footer*/
+
+.footer-distributed .footer-gauche,
+.footer-distributed .footer-centre,
+.footer-distributed .footer-droite{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+/* Footer de gauche */
+
+.footer-distributed .footer-gauche{
+    width: 30%;
+    color: white;
+}
+
+.footer-distributed h3 {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+}
+
+/* Liens des pages du site */
+
+.footer-distributed .liens-footer {
+    color: white;
+    margin: 20px 0 12px;
+}
+
+.footer-distributed .liens-footer a{
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Footer central*/
+
+.footer-distributed .footer-centre{
+    width: 35%;
+    color: white;
+}
+
+.footer-distributed .footer-centre .icons{
+    width: 35px;
+    height: auto;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-centre p{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-centre p a {
+    color: hotpink;
+    text-decoration: none;
+}
+
+
+/* Footer de droite */
+
+.footer-distributed .footer-droite{
+    width: 30%;
+    color: white;
+}
+
+.footer-distributed .footer-entreprise {
+    line-height: 20px;
+    color: white;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-entreprise span {
+    display: block;
+    color: hotpink;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-reseaux {
+    margin-top: 25px;
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+    justify-content: space-between;
+}
+
+.footer-distributed .footer-reseaux a{
+    cursor: pointer;
+
+    font-size: 20px;
+    text-align: center;
+    line-height: 35px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 880px) {
+    .footer-distributed .footer-gauche,
+    .footer-distributed .footer-centre,
+    .footer-distributed .footer-droite{
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-centre .icons{
+        margin-left: 0;
+    }
+}

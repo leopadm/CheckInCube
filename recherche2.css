@@ -1,0 +1,130 @@
+body
+{
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-top: 100px;
+}
+
+
+h1
+{
+    margin-top: 150px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: #777777;
+    text-align: center;
+    font-weight: 800;
+}
+
+
+.tableContainer
+{
+    width: 70%;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    min-height: 50px;
+}
+
+
+.icon1
+{
+    display: inline-block;
+    font-size: 1.5vw;
+    color: #777777;
+    padding: 0;
+    outline: none;
+    background-color: transparent;
+    border: 0px solid transparent;
+    cursor: pointer;
+    padding-left: 1rem;
+}
+
+
+.icon2
+{
+    display: inline-block;
+    font-size: 1.5vw;
+    color: #777777;
+    padding: 0;
+    outline: none;
+    background-color: transparent;
+    border: 0px solid transparent;
+    cursor: pointer;
+    padding-right: 1rem;
+}
+
+
+form, input
+{
+    padding: 0;
+    outline: none;
+    font-family: Montserrat, sans-serif;
+    font-size: small;
+    width: 50%;
+    border: 0px;
+    border-radius: 3px;
+}
+
+
+table{
+    border-collapse: collapse;
+    border-style: hidden;
+    overflow: hidden;
+
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    border: 0px solid #dcdcdc;
+    border-radius: 10px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    display: table;
+    align-items: center;
+}
+
+
+thead {
+    font-weight: 700;
+    width: 100%;
+    color: #777777;
+    background-color: #FECB00;
+    border-radius: 10px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
+tbody {
+    font-weight: 500;
+
+}
+
+
+table:hover {
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+    border: 0px;
+}
+
+
+td {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: medium;
+}
+
+tr:nth-child(even) {
+    background-color: #dcdcdc;
+}
+
+tr:last-of-type{
+    border-bottom:2px solid #FECB00;
+}
+

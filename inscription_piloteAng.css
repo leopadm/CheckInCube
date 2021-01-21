@@ -1,0 +1,112 @@
+body {
+    font-family: Montserrat, sans-serif;
+}
+h1 {
+    text-align: center;
+}
+.bandeau{
+    text-align: center;
+}
+h2{
+    width: 100%;
+    text-align: center;
+    color : #FBF8EF;
+    font-weight: bold;
+    font-family: Montserrat, sans-serif;
+    font-size:xx-large;
+    position: absolute;
+}
+#imageb{
+    max-width: 100%;
+    height: auto;
+}
+label{
+    font-family: Montserrat, sans-serif;
+    font-size: 15pt;
+}
+input{
+    margin-bottom: 3%;
+}
+#partie1{
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    padding: 10px;
+    background-color: #FBF8EF;
+    border-radius: 10px;
+    color :black;
+}
+#coordonnées{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    padding: 10px;
+    background-color: #FBF8EF;
+    border-radius: 10px;
+    color :black;
+}
+.answer{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    font-style: italic;
+    height: 20px;
+    border-color: #000000;
+}
+.suivant{
+    color:#FBF8EF;
+    text-decoration: none;
+    font-family: Montserrat, sans-serif;
+    font-size: small;
+    background-color: black;
+    padding: 10px;
+    border: 1px solid black;
+    height: 5%;
+    margin-left: 10%;
+}
+.suivant:hover{
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.boutonform{
+    color:#FBF8EF;
+    font-family: Montserrat, sans-serif;
+    font-size: small;
+    background-color: black;
+    padding: 10px;
+    border: 1px solid black;
+    height: 5%;
+    margin-left: 10%;
+}
+.boutonform:hover{
+    border-radius: 10px;
+    transition: 0.5s;
+}
+#upload{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    padding: 10px;
+    background-color: #FBF8EF;
+    border-radius: 10px;
+    color :black;
+}
+#submit {
+    margin-left: 25px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #1E3D59;
+    border: 1px solid black;
+    background-color: #F5F0E1;
+    color: #1E3D59;
+    color: black;
+    font-size: 1em;
+}
+
+
+#submit:hover {
+    background-color: #1E3D59;
+    background-color: black;
+    color: #F5F0E1;
+}
+

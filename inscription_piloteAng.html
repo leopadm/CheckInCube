@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="inspilg.css">
+    <link rel="icon" type="image/png" href="Ressources/Medias/LogoWebSite_1.png" />
+</head>
+
+<body>
+<h1>
+    REGISTRATION
+</h1>
+
+<div class="bandeau">
+    <h2>
+        REGISTRATION FORM
+    </h2>
+    <img src="Ressources/Medias/Imge13-2.png" id="imageb">
+</div>
+
+
+
+<form name="inscriptionpilote" method="post" action="writeValuesAng.php">
+
+    <div id="partie1">
+        <label> Sexe </label> <br/>
+        <input type="radio" name="sexeH" value="homme"/> Man <br/>
+        <input type="radio" name="sexeF" value="femme"/> Women <br/>
+
+        <label> Civilité </label> <br/>
+        <input type="radio" name="civilite1" value="M."/> Mr
+        <input type="radio" name="civilite2" value="Mlle"/> Miss
+        <input type="radio" name="civilite3" value="Mme"/> Ms <br/>
+
+        <input type="reset" value="Delete" class="boutonform"/>
+        <a href="#coordonnées" class="suivant"> Next</a>
+    </div>
+
+    <div id="coordonnées">
+        <label> Last Name </label> <br/>
+        <input type="text" placeholder="Exemple : Laville" size="40" maxlength="40" name="nom" class="answer"/> <br/>
+
+        <label> First name </label> <br/>
+        <input type="text" placeholder="Exemple : Paul" size="40" maxlength="40" name="prenom" class="answer"/> <br/>
+
+        <label> Email adress </label> <br/>
+        <input type="text" placeholder="mail@exemple.fr" size="40" maxlength="40" name="mail" class="answer"/> <br/>
+
+        <label> Password </label> <br/>
+        <input type="text" placeholder="" size="40" maxlength="40" name="mdp" class="answer"/> <br/>
+
+        <label> Confirma password </label> <br/>
+        <input type="text" placeholder="" size="40" maxlength="40" name="mdp2" class="answer"/> <br/>
+
+
+        <input type="reset" value="Delete" class="boutonform"/>
+        <input type="submit" class="suivant" value="Submit">
+    </div>
+</form>
+
+</body>
+
+<footer>
+
+</footer>
+
+</html>
