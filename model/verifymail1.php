@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Vérification adresse mail</title>
-    <link rel="stylesheet" href="verifymail1.css">
+    <link rel="stylesheet" href="/style/verifymail1.css">
 </head>
 <body>
     <div class="ImageBG">

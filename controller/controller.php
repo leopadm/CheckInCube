@@ -113,7 +113,7 @@ require('model/confirmaccountAng.php');
 
 function compareValuesFr()
 {
-    require('/model/compareValues.php');
+    require('model/compareValues.php');
 }
 
 function compareValuesAng()
@@ -131,7 +131,7 @@ function compareValuesAll()
     require('model/compareValuesesp.php');
 }
 
-function verifymail1Fr()
+function verifymail1()
 {
     require('model/verifymail1.php');
 }

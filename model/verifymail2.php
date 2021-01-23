@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_POST['inputcode'])) {
     if ($_POST['inputcode'] == $_SESSION['codeperso']) {
-        header('Location: inde.php?page=menu_piloteFr');
+        header('Location: index.php?page=menu_piloteFr');
         exit();
     }
 
