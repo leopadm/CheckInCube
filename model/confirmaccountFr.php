@@ -43,7 +43,7 @@ $content = "
 $mail->MsgHTML($content);
 $mail->Send();
 
-header('Location: /index.php?=menu_piloteFr');
+header('Location: index.php?page=menu_piloteFr');
 exit();
 
 

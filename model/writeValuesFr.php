@@ -2,22 +2,18 @@
 
 session_start();
 
-function connectBDD(){
-    try {
-        $bdd =new PDO('mysql:host=localhost;dbname=checkincube;charset=utf8','root','root');
-    }
-    catch (PDOException $e){
-        echo "Erreur!:" .$e->getMessage() ."<br/>";
-        die();
-    }
-    return($bdd);
-}
-
-
 function write($nom, $prenom, $mail, $mdp, $genre, $appellation, $date){
-    $bdd = connectBDD();
-    $sql = "INSERT INTO pilote (nom, prenom, mail, mot_de_passe, genre, appellation, date_naissance) VALUES ('$nom', '$prenom', '$mail', '$mdp', '$genre', '$appellation', '$date');";
-    $bdd->query($sql);
+    $bdd = new PDO('mysql:host=localhost;dbname=checkincube;charset=utf8','root','root');
+    $str = "INSERT INTO pilote (nom, prenom, mail, mot_de_passe, genre, appellation, date_naissance) VALUES (':nom', ':prenom', ':mail', ':mdp', ':genre', ':appellation', ':date');";
+    $sql = $bdd->prepare($str);    
+    $sql->bindValue(":nom", $nom, PDO::PARAM_STR);
+    $sql->bindValue(":prenom", $prenom, PDO::PARAM_STR);
+    $sql->bindValue(":mail", $mail, PDO::PARAM_STR);
+    $sql->bindValue(":mdp", $mdp, PDO::PARAM_STR);
+    $sql->bindValue(":genre", $genre, PDO::PARAM_STR);
+    $sql->bindValue(":appellation", $appellation, PDO::PARAM_STR);
+    $sql->bindValue(":date", $date, PDO::PARAM_INT);
+    $sql->execute();
 }
 
 if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['mail']) && !empty($_POST['mdp']) && !empty($_POST['mdp2'])){
@@ -38,7 +34,7 @@ if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['mail']) 
             $_SESSION['mail'] = $mail;
             $_SESSION['appellation'] = $appellation;
 
-            header('Location: /index.php?=confirmaccountFr');
+            header('Location: /index.php?page=confirmaccountFr');
             exit();
         }
     }elseif ($_POST['civilite'] == 'Mlle') {
@@ -59,7 +55,7 @@ if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['mail']) 
             $_SESSION['mail'] = $mail;
             $_SESSION['appellation'] = $appellation;
 
-            header('Location: /index.php?=confirmaccountFr');
+            header('Location: /index.php?page=confirmaccountFr');
             exit();
         }     
     }elseif ($_POST['civilite'] == 'Mme') {
@@ -80,7 +76,7 @@ if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['mail']) 
             $_SESSION['mail'] = $mail;
             $_SESSION['appellation'] = $appellation;
 
-            header('Location: /index.php?=confirmaccountFr');
+            header('Location: /index.php?page=confirmaccountFr');
             exit();
         }         
     }

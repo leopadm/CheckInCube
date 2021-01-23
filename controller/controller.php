@@ -85,7 +85,6 @@ function connexionFr()
     require('view/viewPageConnexion.php');
 }
 
-
 function categorieConnexionFr()
 {
     require('view/categorieConnexion.php');
@@ -103,7 +102,7 @@ function writeValuesAng()
 
 function confirmAccountFr()
 {
-    require('model/confirmacountFr.php');
+    require('model/confirmaccountFr.php');
 }
 
 function confirmAccountAng()

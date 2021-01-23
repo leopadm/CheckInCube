@@ -81,13 +81,12 @@ li{
 }
 
 body{
-    background: url("Ressources/Medias/Image26.jpg");
+    background: url("/Ressources/Medias/Image26.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     min-height: 100vh;
 }
-
 
 
 .wrapper{

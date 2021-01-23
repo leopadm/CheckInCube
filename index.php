@@ -87,8 +87,8 @@ else
             writeValuesAng();
             break;
 
-        case 'confirmAccountFr':
-            confirmaccountFr();
+        case 'confirmaccountFr':
+            confirmAccountFr();
             break;
 
         case 'confirmAccountAng':

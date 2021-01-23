@@ -15,7 +15,7 @@
         
         <ul class="Menu">
             <li><a href="index.php?page=categorieConnexion" class="TopText">Se connecter</a></li>
-            <li><a href="index.php?page=choixCategoriesFr" class="TopText">S'inscrire</a></li>
+            <li><a href="index.php?page=choixCategorieFr" class="TopText">S'inscrire</a></li>
         </ul>
     </nav>
 </header>
