@@ -25,7 +25,7 @@ $prenom = $_SESSION['prenom'];
 $nom = $_SESSION['nom'];
 $appellation = $_SESSION['appellation'];
 
-$mail->AddAddress($_SESSION['mail'] , "$prenom $nom");
+$mail->AddAddress($_SESSION['mail'] , "$appellation $prenom $nom");
 $mail->SetFrom("checkincube@gmail.com", "CheckInCube");
 $mail->Subject = "[CheckInCube] Création de votre compte";
 $content = "
@@ -43,7 +43,7 @@ $content = "
 $mail->MsgHTML($content);
 $mail->Send();
 
-header('Location: view_menupilote.php');
+header('Location: /index.php?=menu_piloteFr');
 exit();
 
 

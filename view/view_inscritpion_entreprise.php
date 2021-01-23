@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Inscription entreprise</title>
 
-    <link rel="stylesheet" type="text/css" href="css/inscription_entreprise.css">
+    <link rel="stylesheet" type="text/css" href="/style/inscription_entreprise.css">
 </head>
 
 <?php require('header.php'); ?>

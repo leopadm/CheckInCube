@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>PageConnexion</title>
-    <link rel="stylesheet" href="PageConnexion.css">
+    <link rel="stylesheet" href="/style/PageConnexion.css">
     <link rel="icon" type="image/png" href="Ressources/Medias/LogoWebSite_1.png" />
 </head>
 <body>
@@ -11,7 +11,7 @@
         <img src="Ressources/Medias/Image14.jpg" width="100%" alt="Image">
     </div>
 
-    <form class="Window" action="compareValues.php" method="post">
+    <form class="Window" action="/index.php?=compareValues" method="post">
         <label class="Sub1">Page de Connexion</label>
         <div class="Sub2">
             <label for="username">Identifiant:</label>

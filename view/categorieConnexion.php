@@ -10,12 +10,12 @@
 <body>
 
 <div class="image">
-    <img src="Ressources/Medias/Image14.jpg" width="100%" alt="Image">
+    <img src="/Ressources/Medias/Image14.jpg" width="100%" alt="Image">
 </div>
 
 <a class="window">
-    <a class = "btn" href="inspilg.html" >Pilote </a>
-    <a class = "btn1" href="view_inscritpion_entreprise.html" >Centre de recherche  </a>
+    <a class = "btn" href="/index.php?page=connexionFr" >Pilote </a>
+    <a class = "btn1" href="/index.php?page=inscritpion_entrepriseFr" >Centre de recherche  </a>
     <a class = "btn2" type = "button" >Centre de formation  </a>
 </a>
 

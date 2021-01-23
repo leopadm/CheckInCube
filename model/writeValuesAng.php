@@ -23,7 +23,7 @@ function write($nom, $prenom, $mail, $mdp, $genre, $appellation){
 
 $bdd = connectBDD();
 if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['mdp']) && isset($_POST['mail'])){
-    if (isset($_POST['sexeH'])) {     
+    if (($_POST['sexe'] == 'homme')) {     
         if ($_POST['mdp'] == $_POST['mdp2']){
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
@@ -38,51 +38,47 @@ if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['mdp']) && i
             $_SESSION['mail'] = $mail;
             $_SESSION['appellation'] = $appellation;
 
-            header('Location: confirmaccountFr.php');
+            header('Location: /index.php?=confirmaccountAng');
             exit();
         }
     } 
-    elseif (isset('sexeF')) {
-        if (isset($_POST['civilite2'])) {
-            if ($_POST['mdp'] == $_POST['mdp2']){
-                $prenom = $_POST['prenom'];
-                $nom = $_POST['nom'];
-                $mdp = hash("SHA256", $_POST['mdp']);
-                $mail = $_POST['mail'];
-                $genre = 'femme';
-                $appellation = 'Mlle';
-                write($nom, $prenom, $mail, $mdp, $genre, $appellation);
+    elseif ($_POST['civilite'] == 'Mlle') {
+        if ($_POST['mdp'] == $_POST['mdp2']){
+            $prenom = $_POST['prenom'];
+            $nom = $_POST['nom'];
+            $mdp = hash("SHA256", $_POST['mdp']);
+            $mail = $_POST['mail'];
+            $genre = 'femme';
+            $appellation = 'Mlle';
+            write($nom, $prenom, $mail, $mdp, $genre, $appellation);
 
-                $_SESSION['prenom'] = $prenom;
-                $_SESSION['nom'] = $nom;
-                $_SESSION['mail'] = $mail;
-                $_SESSION['appellation'] = $appellation;
+            $_SESSION['prenom'] = $prenom;
+            $_SESSION['nom'] = $nom;
+            $_SESSION['mail'] = $mail;
+            $_SESSION['appellation'] = $appellation;
 
-                header('Location: confirmaccountFr.php');
-                exit();
-            }
-        }           
+            header('Location: /index.php?=confirmaccountAng');
+            exit();
+        }       
     }
 
-    elseif (isset('sexeF')) {
-        if (isset($_POST['civilite3'])) {
-            if ($_POST['mdp'] == $_POST['mdp2']){
-                $prenom = $_POST['prenom'];
-                $nom = $_POST['nom'];
-                $mdp = hash("SHA256", $_POST['mdp']);
-                $mail = $_POST['mail'];
-                $genre = 'femme';
-                $appellation = 'Mme';
-                write($nom, $prenom, $mail, $mdp, $genre, $appellation);
+    elseif ($_POST['civilite'] == 'Mme') {
+        if ($_POST['mdp'] == $_POST['mdp2']){
+            $prenom = $_POST['prenom'];
+            $nom = $_POST['nom'];
+            $mdp = hash("SHA256", $_POST['mdp']);
+            $mail = $_POST['mail'];
+            $genre = 'femme';
+            $appellation = 'Mme';
+            write($nom, $prenom, $mail, $mdp, $genre, $appellation);
 
-                $_SESSION['prenom'] = $prenom;
-                $_SESSION['nom'] = $nom;
-                $_SESSION['mail'] = $mail;
-                $_SESSION['appellation'] = $appellation;
+            $_SESSION['prenom'] = $prenom;
+            $_SESSION['nom'] = $nom;
+            $_SESSION['mail'] = $mail;
+            $_SESSION['appellation'] = $appellation;
 
-                header('Location: confirmaccountFr.php');
-                exit();
-            }
+            header('Location: /index.php?=confirmaccountAng');
+            exit();
         }           
     }     
 }

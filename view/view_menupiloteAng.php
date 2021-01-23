@@ -8,7 +8,7 @@ session_start();
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="CerveauAPP.png">
     <title>PsychoTech Industries</title>
-    <link rel="stylesheet" type="text/css" href="menupilote.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/style/menupilote.css" media="screen">
 </head>
 
 
@@ -32,12 +32,11 @@ session_start();
     <ul>
         <li class="about"><a href="#">About</a></li>
         <li class="contact"><a href="#" >Contact</a></li>
-      <li class="deroulant"><a href="#">Languages </a>
+        <li class="deroulant"><a href="#">Languages </a>
             <ul class="sous">
-                <li><a href="view_menupilote.php">French<img src="France.png" height="40px" width="50px" /></a></li>
-                <li><a href="#">English<img src="UK.png" height="50px" width="50px" /></a></li>
-                <li><a href="#">German<img src="Allemagne.png" height="40px" width="50px" /></a></li>
-                <li><a href="#">Spanish<img src="espagne.png" height="40px" width="50px" /></a></li>
+                <li><a href="view_menupilote.php">French<img src="/Ressources/Medias/Fra.png" height="40px" width="50px" /></a></li>
+                <li><a href="/Ressources/Medias/All.png">German<img src="Allemagne.png" height="40px" width="50px" /></a></li>
+                <li><a href="/Ressources/Medias/Esp.png">Spanish<img src="espagne.png" height="40px" width="50px" /></a></li>
             </ul>
         </li>
         <li class="welcome"><a href="#" >Bienvenue <?=$_SESSION['prenom']?> <?=$_SESSION['nom']?> </a></li>
@@ -55,14 +54,14 @@ session_start();
         </div>
         <div id="image">
             <a href="graphique.png"><img src="graphique.png" width=33%></a>
-            <a href="réaction.png"><img src="réaction.png" width="33%"></a>
+            <a href="reaction.png"><img src="réaction.png" width="33%"></a>
             <img src="niveau.png" width="33%"><br>
             <p>0</p>
         </div>
     </div>
 
     <div id="rdv">
-        <div id="réserver">
+        <div id="reserver">
             <p>Make an appointment</p>
             <input type="date" />
         </div>

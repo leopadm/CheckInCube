@@ -38,7 +38,7 @@ if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['mail']) 
             $_SESSION['mail'] = $mail;
             $_SESSION['appellation'] = $appellation;
 
-            header('Location: confirmaccountFr.php');
+            header('Location: /index.php?=confirmaccountFr');
             exit();
         }
     }elseif ($_POST['civilite'] == 'Mlle') {
@@ -59,7 +59,7 @@ if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['mail']) 
             $_SESSION['mail'] = $mail;
             $_SESSION['appellation'] = $appellation;
 
-            header('Location: confirmaccountFr.php');
+            header('Location: /index.php?=confirmaccountFr');
             exit();
         }     
     }elseif ($_POST['civilite'] == 'Mme') {
@@ -80,7 +80,7 @@ if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['mail']) 
             $_SESSION['mail'] = $mail;
             $_SESSION['appellation'] = $appellation;
 
-            header('Location: confirmaccountFr.php');
+            header('Location: /index.php?=confirmaccountFr');
             exit();
         }         
     }

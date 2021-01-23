@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="CerveauAPP.png">
     <title>PsychoTech Industries</title>
-    <link rel="stylesheet" type="text/css" href="menucentre.css">
+    <link rel="stylesheet" type="text/css" href="/style/menucentre.css">
 </head>
 
 

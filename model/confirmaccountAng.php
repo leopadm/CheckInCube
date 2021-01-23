@@ -8,6 +8,10 @@ require 'PHPMailer-master/PHPMailer-master/src/Exception.php';
 require 'PHPMailer-master/PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/PHPMailer-master/src/SMTP.php';
 
+$prenom = $_SESSION['prenom'];
+$nom = $_SESSION['nom'];
+$appellation = $_SESSION['appellation'];
+
 $mail = new PHPMailer();
 $mail->CharSet = "UTF-8";
 $mail->IsSMTP();
@@ -21,7 +25,7 @@ $mail->Host       = "smtp.gmail.com";
 $mail->Username   = "checkincube@gmail.com";
 $mail->Password   = "psychotech.inc";
 $mail->IsHTML(true);
-$mail->AddAddress($_SESSION['mail'] , "$_SESSION['prenom'] $_SESSION['nom'] ");
+$mail->AddAddress($_SESSION['mail'] , "$appellation $prenom $nom");
 $mail->SetFrom("checkincube@gmail.com", "CheckInCube");
 $mail->Subject = "[CheckInCube] Creation of your account";
 $content = "
@@ -30,7 +34,7 @@ $content = "
             </head>
 
             <body style='font-family:Montserrat, sans-serif;'>
-                <a style='font-weight:500;'></br></br>Dear $_SESSION['appellation'] $_SESSION['prenom'] $_SESSION['prenom']</br></br>Your are receiving this email as you created an account.</br>The email adress to which you received this email will be used as your user ID to log in to your account.</br>For safety protocols, your password will not be communicated in this email.</br></br>To complete the ccreation of your account, we are asking you to send to us a double-sided copy of your ID, or passport. </a>
+                <a style='font-weight:500;'></br></br>Dear $appellation $prenom $nom</br></br>Your are receiving this email as you created an account.</br>The email adress to which you received this email will be used as your user ID to log in to your account.</br>For safety protocols, your password will not be communicated in this email.</br></br>To complete the ccreation of your account, we are asking you to send to us a double-sided copy of your ID, or passport. </a>
 
                 <a style='font-weight:500'></br></br>Sincerely</a>
             </body>
@@ -39,7 +43,7 @@ $content = "
 $mail->MsgHTML($content);
 $mail->Send();
 
-header('Location: view_menupiloteAng.php');
+header('Location: /index.php?=menu_piloteAng');
 exit();
 
 

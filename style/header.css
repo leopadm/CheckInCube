@@ -25,8 +25,9 @@
 .Menu
 {
     padding: 1rem;
-    position: absolute;
     right: 20px;
+    display: block;
+    margin-top: -55px;
 }
 
 

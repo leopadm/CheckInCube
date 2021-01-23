@@ -13,7 +13,7 @@ return($bdd);
 
 function getTable($table){
   $bdd = connectBDD();
-  $sql = "SELECT * FROM $table";
+  $sql = "SELECT * FROM $table;(";
   return($bdd->query($sql));
 }
 

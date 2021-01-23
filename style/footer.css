@@ -88,7 +88,7 @@ footer {
 }
 
 .footer-distributed .footer-centre p a {
-    color: hotpink;
+    color: #FECB00;
     text-decoration: none;
 }
 
@@ -110,7 +110,7 @@ footer {
 
 .footer-distributed .footer-entreprise span {
     display: block;
-    color: hotpink;
+    color: #FECB00;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -148,4 +148,9 @@ footer {
     .footer-distributed .footer-centre .icons{
         margin-left: 0;
     }
+}
+
+.footer-gauche h3
+{
+    color: #FECB00;
 }
