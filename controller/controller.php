@@ -80,7 +80,6 @@ function connexionEsp()
     require('view/viewConnexionEsp.php');
 }
 
-
 function connexionFr()
 {
     require('view/viewPageConnexion.php');
@@ -114,7 +113,7 @@ require('model/confirmaccountAng.php');
 
 function compareValuesFr()
 {
-    require('model/compareValues.php');
+    require('/model/compareValues.php');
 }
 
 function compareValuesAng()

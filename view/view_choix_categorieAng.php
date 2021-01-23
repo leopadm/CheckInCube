@@ -14,7 +14,7 @@
 </div>
 
 <a class="window">
-    <a class = "btn" href="/index.php?page=inscription_piloteAng.html" >Pilote </a>
+    <a class = "btn" href="index.php?page=inscription_piloteAng.html" >Pilote </a>
     <a class = "btn1" type = "button" >Research center  </a>
     <a class = "btn2" type = "button" >Training center  </a>
 </a>

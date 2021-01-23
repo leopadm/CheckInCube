@@ -86,6 +86,45 @@ if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['mail']) 
     }
 }
 
+else{
+
+    $prenom = $_POST['prenom'];
+    $nom = $_POST['nom'];
+    $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+    $mdp2 = password_hash($_POST['mdp2'], PASSWORD_DEFAULT);
+    $mail = $_POST['mail'];
+
+    if (empty($prenom)){
+        echo "<script type='text/javascript'> alert('Pas de prénom saisi. <br/> Veuillez saisir un prénom.')";
+        header('Location: index.php?page=inscription_piloteFr');
+        exit();
+    }
+
+    elseif (empty($nom)){
+        echo "<script type='text/javascript'> alert('Pas de nom saisi. <br/> Veuillez saisir un nom.')";
+        header('Location: index.php?page=inscription_piloteFr');
+        exit();
+    }
+
+    elseif (empty($mail)){
+        echo "<script type='text/javascript'> alert('Pas de mail saisi. <br/> Veuillez saisir un mail.')";
+        header('Location: index.php?page=inscription_piloteFr');
+        exit();
+    }
+
+    elseif (empty($mdp)){
+        echo "<script type='text/javascript'> alert('Pas de mot de passe saisi. <br/> Veuillez saisir un mot de passe.')";
+        header('Location: index.php?page=inscription_piloteFr');
+        exit();
+    }
+
+    elseif($mdp !== $mdp2){
+        echo "<script type='text/javascript'> alert('Les mots de passe saisis ne sont pas identiques. <br/> Veuillez saisir des mots de passe identiques.')";
+        header('Location: index.php?page=inscription_piloteFr');
+        exit();
+    }
+
+}
 
 ?>
 

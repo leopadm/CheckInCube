@@ -5,7 +5,7 @@
 
 <body>
 
-<form method="post" action="/index.php?page=writeValuesFr.php">
+<form method="post" action="index.php?page=writeValuesFr.php">
     <div class="wrapper">
         <div class="formulaire">
             <div id="partie1">

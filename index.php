@@ -67,12 +67,16 @@ else
             connexionEsp();
             break;
 
-        case 'connexionFR':
+        case 'connexionAng':
+            connexionAng();
+            break;
+
+        case 'connexionFr':
             connexionFr();
             break;
 
         case 'categorieConnexion':
-            choixCategorieFr();
+            categorieConnexionFr();
             break;
 
         case 'writeValuesFr':

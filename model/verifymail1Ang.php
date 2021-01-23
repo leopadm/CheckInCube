@@ -11,7 +11,7 @@
         <img src="Ressources/Medias/Image14.jpg" width="100%" alt="Image">
     </div>
 
-    <form class="Window" action="verifymail2.php" method="post">
+    <form class="Window" action="index.php?page=verifymail2" method="post">
         <label class="Sub1">Two steps authentification procedure</label>
         <div class="Sub2">
             <label id="txt">You are shortly going to receive an email.</label>

@@ -88,7 +88,7 @@ if(isset($_POST['inputUser']) && isset($_POST['inputPassword'])){
 
                 $_SESSION['codeperso'] = $codeperso;
 
-                header('Location: /index.php?=verifymail1');
+                header('Location: index.php?page=verifymail1');
                 exit();
             }
         }
@@ -100,7 +100,7 @@ else{
     while($pilote = $tpilote->fetch()) {
         if ($pilote['mail'] !== $_POST['inputUser']) {
             echo "<script type='text/javascript'> alert('Identifiant incorrect. <br/> Veuillez saisir un identifiant correct.')";
-            header('Location: /index.php?=connexionFr');
+            header('Location: index.php?page=connexionFr');
             exit();
         }
     }
