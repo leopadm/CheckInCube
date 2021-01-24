@@ -50,6 +50,14 @@ else
         case 'menu_centreFr':
             menu_centreFr();
             break;
+
+        case 'menu_centreAng':
+            menu_centreAng();
+            break;
+
+        case 'menu_centreAll':
+            menu_centreAll();
+            break;
         
         case 'menu_piloteFr':
             menu_piloteFr();
@@ -57,6 +65,10 @@ else
 
         case 'menu_piloteAng':
             menu_piloteAng();
+            break;
+
+        case 'menu_piloteAll':
+            menu_piloteAll();
             break;
 
         case 'connexionAll':
@@ -127,7 +139,30 @@ else
             verifymail2Ang();
             break;
 
-        
+        case 'compte':
+            compte();
+            break;
+
+        case 'compteAll':
+            compteAll();
+            break;
+
+        case 'compteAng':
+            compteAng();
+            break;
+
+        case 'centre':
+            centre();
+            break;
+
+        case 'centreAll':
+            centreAll();
+            break;
+
+            case 'centreAng':
+                centreAng();
+                break;
+            
         
 
 
