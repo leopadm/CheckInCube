@@ -1,81 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="CerveauAPP.png">
-    <title>PsychoTech Industries</title>
-    <link rel="stylesheet" type="text/css" href="/style/menucentre.css">
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="CerveauAPP.png">
+	<title>PsychoTech Industries</title>
+	<link rel="stylesheet" type="text/css" href="compte.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 </head>
 
-
 <header>
-    <nav class="navigation">
-        <ul>
-            <li class="deroulant1"><a href="#">Menu</a>
-                <ul class="sous1">
-                    <li><a href="#">mon compte</a></li>
-                    <li><a href="#">mes analyses</a></li>
-                    <li><a href="#">mon historique</a></li>
-                    <li><a href="#">mes rendez-vous</a></li>
-                    <li><a href="#">favoris</a></li>
-                    <li><a href="#">lieux d'analyses proche</a></li>
-                    <li><a href="#">se déconnecter</a></li>
-                </ul>
-            </li>
-        </ul>
-        <ul>
-            <li ><a href="#"><img src="Ressources/Medias/LogoWebSite_1.png" alt="Logo" class="LogoWS"/></a></li>
-        </ul>
-        <ul>
-            <li class="about"><a href="#">A propos</a></li>
-            <li class="contact"><a href="#" >Contact</a></li>
-            <li class="deroulant"><a href="#">Langues </a>
-                <ul class="sous">
-                    <li><a href="#">Français<img src="Ressources/Medias/Fra.png" height="40px" width="50px" /></a></li>
-                    <li><a href="#">English<img src="Ressources/Medias/Ang.png" height="50px" width="50px" /></a></li>
-                    <li><a href="#">Deutsch<img src="Ressources/Medias/All.png" height="40px" width="50px" /></a></li>
-                    <li><a href="#">Español<img src="Ressources/Medias/Esp.png" height="40px" width="50px" /></a></li>
-                </ul>
-            </li>
-            <li class="welcome"><a href="#" > Bienvenue "User" </a></li>
-        </ul>
-    </nav>
-</header>
+	<nav class="navigation">
+	  <ul>
+	  <li class="accueil"><a href="#">CheckInCube</a></li>
+    <li class="about"><a href="#">A propos</a></li>
+    <li class="contact"><a href="#" >Contact</a></li>
+      <li class="deroulant1"><a href="#">Menu</a>
+          <ul class="sous1">
+            <li><a href="#">mon compte</a></li>
+            <li><a href="#">Recherche</a></li>
+            <li><a href="#">Les analyses des pilotes</a></li>
+            <li><a href="#">Les pilotes</a></li>
+            <li><a href="#">Les rendez-vous</a></li>
+            <li><a href="#">Les autres centres</a></li>
+            <li><a href="#">se déconnecter</a></li>
+          </ul>
+      </li>
+    </ul>
+    <ul>
+      <li class="deroulant"><a href="#">Langues </a>
+      		<ul class="sous">
+        		<li><a href="#">Français<img src="France.png" height="40px" width="50px" /></a></li>
+        		<li><a href="#">English<img src="UK.png" height="50px" width="50px" /></a></li>
+        		<li><a href="#">Deutsch<img src="Allemagne.png" height="40px" width="50px" /></a></li>
+        		<li><a href="#">Español<img src="espagne.png" height="40px" width="50px" /></a></li>
+      		</ul>
+    	</li>
+  	</ul>
+  	</nav>
+  	</header>
 
 <body>
-
-<div id="recherche">
-    <div id="rechercher">
-        <p>Recherche</p>
-        <div id="searchbar">
-            <form action="" class="formulaire">
-                <input class="champ" type="text" value=""/>
-                <input class="bouton" type="button" value="Rechercher" />
-            </form>
-        </div>
-        <div id = "saut">
-            <p>e</p>
-        </div>
-    </div>
+	
+<div id="presentation">
+  <p> Bienvenue <?php echo $user ?> </p>
+  <p> Merci d'utiliser CheckInCube </p>
 </div>
 
-<div id="bloc">
-    <div id="analyses">
-        <p>Analyses des pilotes</p>
-        <p>Choisissez un pilote</p>
-    </div>
-</div>
-
-<div id="Rdv">
-    <div id="reservation">
-        <p>Séance programmée</p>
-    </div>
-</div>
-
-<div id="Contact">
-    <div id="contacter">
-        <p>contact</p>
-    </div>
+<div id="bouton">
+  <button class="favorite styled"
+          type="button" onclick="Message()">
+        Recherche
+      </button>
+      <p><br/></p>
+  <button class="favorite styled"
+          type="button" onclick="Message()">
+        Analyses des pilotes
+      </button>
+      <p><br/></p>
+  <button class="favorite styled"
+          type="button" onclick="Message()">
+        Rendez-vous prévu
+      </button>
 </div>
 
 </body>

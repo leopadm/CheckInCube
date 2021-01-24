@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,22 +14,22 @@ session_start();
 	<nav class="navigation">
 	  <ul>
 	  <li class="accueil"><a href="#">CheckInCube</a></li>
-    <li class="about"><a href="#">About</a></li>
-    <li class="contact"><a href="#" >Contact</a></li>
-      <li class="deroulant1"><a href="#">Menu</a>
+    <li class="about"><a href="#">Über uns</a></li>
+    <li class="contact"><a href="#" >Kontakt</a></li>
+      <li class="deroulant1"><a href="#">Menü</a>
           <ul class="sous1">
-            <li><a href="#">my account</a></li>
-            <li><a href="#">Search</a></li>
-            <li><a href="#">my analysis</a></li>
-            <li><a href="#">my history</a></li>
-            <li><a href="#">my appointment</a></li>
-            <li><a href="#">places of analysis</a></li>
-            <li><a href="#">log out</a></li>
+            <li><a href="#">meine Konto</a></li>
+            <li><a href="#">Forschung</a></li>
+            <li><a href="#">meine Analysen</a></li>
+            <li><a href="#">meine Geschichte</a></li>
+            <li><a href="#">meine Termine</a></li>
+            <li><a href="#">Orte für Analyse </a></li>
+            <li><a href="#">Ausloggen</a></li>
           </ul>
       </li>
     </ul>
     <ul>
-      <li class="deroulant"><a href="#">Language </a>
+      <li class="deroulant"><a href="#">Sprachen </a>
       		<ul class="sous">
         		<li><a href="#">Français<img src="France.png" height="40px" width="50px" /></a></li>
         		<li><a href="#">English<img src="UK.png" height="50px" width="50px" /></a></li>
@@ -44,29 +40,14 @@ session_start();
   	</ul>
   	</nav>
   	</header>
-<body>
-  
-<div id="presentation">
-  <p> Welcome <?php echo $user ?> </p>
-  <p> Thank you for using CheckInCube </p>
-</div>
 
-<div id="bouton">
-  <button class="favorite styled"
-          type="button" onclick="Message()">
-        Search
-      </button>
-      <p><br/></p>
-  <button class="favorite styled"
-          type="button" onclick="Message()">
-        Analysis
-      </button>
-      <p><br/></p>
-  <button class="favorite styled"
-          type="button" onclick="Message()">
-        Scheduled appointment
-      </button>
-</div>
+<body>
+
+  <div id="lieu">
+    <p> Forschungszentrum von ... , Adresse</p>
+    <p> Forschungszentrum von ... , Adresse</p>
+    <p> Forschungszentrum von ... , Adresse</p>
+    <p> Forschungszentrum von ... , Adresse</p>
+  </div>
 
 </body>
-</html>
