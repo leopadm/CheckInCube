@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" type="text/css" href="style/inscriptionPilote.css">
+</head>
 
 <?php require('header.php'); ?>
 
 <body>
 
-<form method="post" action="index.php?page=writeValuesFr.php">
+<form method="post" action="index.php?page=writeValuesFr">
     <div class="wrapper">
         <div class="formulaire">
             <div id="partie1">
