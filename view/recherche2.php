@@ -1,28 +1,23 @@
 <?php
 
-    function connectBDD(){
-    try {
-        $bdd =new PDO('mysql:host=localhost;dbname=checkincube;charset=utf8','root','root');
-    }
-    catch (PDOException $e){
-        echo "Erreur!:" .$e->getMessage() ."<br/>";
-        die();
-    }
-    return($bdd);
-    }
+$bdd = new PDO('mysql:host=localhost;dbname=checkincube;charset=utf8','root','root');
+$str = "INSERT INTO pilote (nom, prenom, mail, mot_de_passe, genre, appellation, date_naissance) VALUES (':nom', ':prenom', ':mail', ':mdp', ':genre', ':appellation', ':date');";
+$sql = $bdd->prepare($str);    
+$sql->bindValue(":nom", $nom, PDO::PARAM_STR);
+$sql->bindValue(":prenom", $prenom, PDO::PARAM_STR);
+$sql->bindValue(":mail", $mail, PDO::PARAM_STR);
+$sql->bindValue(":mdp", $mdp, PDO::PARAM_STR);
+$sql->bindValue(":genre", $genre, PDO::PARAM_STR);
+$sql->bindValue(":appellation", $appellation, PDO::PARAM_STR);
+$sql->bindValue(":date", $date, PDO::PARAM_INT);
+$sql->execute();
 
-    function getTable($table, $value1, $value2, $value3, $value4){
-        $bdd = connectBDD();
-        $sql = "SELECT * FROM $table WHERE nom LIKE '%$value1%' AND prenom LIKE '%$value2%' AND mail LIKE '%$value3%' AND date_naissance LIKE '%$value4%';";
-        return($bdd->query($sql));
-    }
+$id = $_POST['id'];
+$nom = $_POST['nom'];
+$prenom = $_POST['prenom'];
+$mail = $_POST['mail'];
+$date = $_POST['date'];
 
-    $id = $_POST['id'];
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $mail = $_POST['mail'];
-    $date = $_POST['date'];
-    $pilote1 = getTable('pilote', $nom, $prenom, $mail, $date);
 ?>
 
 <!DOCTYPE html>
@@ -31,14 +26,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeFr</title>
-    <link rel="stylesheet" href="recherche2.css"/>
+    <link rel="stylesheet" href="/style/recherche2.css"/>
     <link rel="icon" type="image/png" href="Ressources/Medias/LogoWebSite_1.png" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="fontawesome/fontawesome-free-5.15.1-web/css/all.css"/>
 
 </head>
 
-<?php require('header.php'); ?>
+<?php require('headerpilote.php'); ?>
 
 <body>
 
@@ -66,7 +61,7 @@
 
 <tbody>
 <?php
-while ($pilote = $pilote1->fetch()) {
+while ($pilote = $sql->fetch(PDO::FETCH_ASSOC)) {
     $id = $pilote['id'];
     $prenom = $pilote['prenom'];
     $nom = $pilote['nom'];

@@ -11,7 +11,7 @@
     <img src="Ressources/Medias/Image14.jpg" width="100%" alt="Image">
 </div>
 
-<form class="Window" action="compareValuesEsp.php" method="post">
+<form class="Window" action="index.php?page=compareValuesEsp" method="post">
     <label class="Sub1">Página de inicio de sesión</label>
     <div class="Sub2">
         <label for="username">Usario:</label>

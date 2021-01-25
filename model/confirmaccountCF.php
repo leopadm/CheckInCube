@@ -34,7 +34,7 @@ $content = "
             </head>
 
             <body style='font-family:Montserrat, sans-serif;'>
-                <a style='font-weight:500;'><br><br>Bonjour, $appellation $prenom $nom <br><br>Vous recevez ce mail pour vous confirmer de la création de votre compte.<br>L'adresse mail correspondant à cette boit mail fait office d'identifiant.<br>Pour des raisons de sécurité le mot de passe n'est pas affiché sur ce mail.<br><br>Nous vous demandons aussi de nous retourner une copie du recto et du verso d'une pièce d'identité.</a>
+                <a style='font-weight:500;'><br><br>Bonjour, $appellation $prenom $nom <br><br>Vous recevez ce mail pour vous confirmer la création de votre compte.<br>L'adresse mail correspondant à cette boite mail fait office d'identifiant.<br>Pour des raisons de sécurité le mot de passe n'est pas affiché sur ce mail.<br><br>Nous vous demandons aussi de nous retourner une copie du recto et du verso d'une pièce d'identité.</a>
 
                 <a style='font-weight:500'><br><br>Cordialement</a>
             </body>
@@ -43,7 +43,7 @@ $content = "
 $mail->MsgHTML($content);
 $mail->Send();
 
-header('Location: index.php?page=menu_piloteFr');
+header('Location: index.php?page=menu_centreFr');
 exit();
 
 

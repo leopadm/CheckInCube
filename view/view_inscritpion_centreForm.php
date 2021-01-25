@@ -13,7 +13,7 @@
 
 <div class="wrapper">
     <div class="formulaire">
-        <form name="inscriptionentreprise" method="post" action="#">
+        <form name="inscriptionentreprise" method="post" action="index.php?page=writeValuesCentreForm">
             <div id="partie1">
                 <span class="titre"> Genre </span> <br/>
                 <label><input type="radio" name="sexe" value="homme" class="option-input radio"/>Homme</label>
@@ -26,14 +26,14 @@
             </div>
 
             <div id="coordonnées">
-                    <input type="text" class="input" placeholder="Nom">
-                    <input type="text" class="input" placeholder="Prénom">
-                    <!--<input type="date" name="dateNaissance" class="dateNaissance">-->
-                    <input type="text" class="input" placeholder="Nom de l'entreprise">
-                    <input type="text" class="input" placeholder="Poste dans l'entreprise">
-                    <input type="email" class="input" placeholder="Mail">
-                    <input type="password" class="input" placeholder="Mot de passe">
-                    <input type="password" class="input" placeholder="Confirmation du mot de passe">
+                    <input type="text" name="nom" class="input" placeholder="Nom">
+                    <input type="text" name="prenom" class="input" placeholder="Prénom">
+                    <input type="date" name="dateNaissance" class="dateNaissance">
+                    <input type="text" name="nomEntreprise" class="input" placeholder="Nom de l'entreprise">
+                    <input type="text" name="poste" class="input" placeholder="Poste dans l'entreprise">
+                    <input type="email" name="mail" class="input" placeholder="Mail">
+                    <input type="password" name="mdp" class="input" placeholder="Mot de passe">
+                    <input type="password" name="mdp2" class="input" placeholder="Confirmation du mot de passe">
             </div>
         <input type="submit" value="Valider mon inscription" id="submit">
         </form>

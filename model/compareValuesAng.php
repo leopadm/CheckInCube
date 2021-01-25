@@ -19,32 +19,14 @@ require 'PHPMailer-master/PHPMailer-master/src/Exception.php';
 require 'PHPMailer-master/PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/PHPMailer-master/src/SMTP.php';
 
-function connectBDD(){
-    try {
-        $bdd =new PDO('mysql:host=localhost;dbname=checkincube;charset=utf8','root','root');
-    }
-    catch (PDOException $e){
-        echo "Erreur!:" .$e->getMessage() ."<br/>";
-        die();
-    }
-    return($bdd);
-}
-
-function getTable($table){
-    $bdd = connectBDD();
-    $sql = "SELECT * FROM $table";
-    return($bdd->query($sql));
-}
-
-function generateRandomString($length = 10) {
-    return substr(str_shuffle(str_repeat($x='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
-}
-
 $codeperso = generateRandomString();
 
 if(isset($_POST['inputUser']) && isset($_POST['inputPassword'])){
-    $tpilote = getTable('pilote');
-    while($pilote = $tpilote->fetch()) {
+    $bdd =new PDO('mysql:host=localhost;dbname=checkincube;charset=utf8','root','root');
+    $str = "SELECT * FROM pilote;";
+    $sql = $bdd->prepare($str);
+    $sql->execute();
+    while($pilote = $sql->fetch(PDO::FETCH_ASSOC)) {
         if ($pilote['mail'] == $_POST['inputUser']){
             if ($pilote['mot_de_passe'] == hash("SHA256",$_POST['inputPassword'])) {
                 $_SESSION['prenom'] = $pilote['prenom'];
@@ -90,7 +72,7 @@ if(isset($_POST['inputUser']) && isset($_POST['inputPassword'])){
 
                 $_SESSION['codeperso'] = $codeperso;
 
-                header('Location: verifymail1Ang.php');
+                header('Location: index.php?page=verifymail1Ang');
                 exit();
             }
         }
@@ -98,11 +80,14 @@ if(isset($_POST['inputUser']) && isset($_POST['inputPassword'])){
 }
 
 else{
-    $tpilote = getTable('pilote');
-    while($pilote = $tpilote->fetch()) {
+    $bdd =new PDO('mysql:host=localhost;dbname=checkincube;charset=utf8','root','root');
+    $str = "SELECT * FROM pilote;";
+    $sql = $bdd->prepare($str);
+    $sql->execute();
+    while($pilote = $sql->fetch(PDO::FETCH_ASSOC)) {
         if ($pilote['mail'] !== $_POST['inputUser']) {
             echo "<script type='text/javascript'> alert('Incorrect user ID. <br/> Please, enter a correct user ID.')";
-            header('Location: viewConnexionAng.php');
+            header('Location: index.php?page=viewConnexionAng');
             exit();
         }
     }

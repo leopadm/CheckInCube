@@ -39,8 +39,8 @@ else
             choixCategorieAng();
             break;
 
-        case 'inscription_entrepriseFr':
-            inscription_entrepriseFr();
+        case 'inscription_centreForm':
+            inscription_centreForm();
             break;
 
         case 'inscription_piloteFr':
@@ -107,6 +107,10 @@ else
             confirmAccountAng();
             break;
 
+        case 'confirmaccountCF':
+            confirmaccountCF();
+            break;
+
         case 'compareValuesFr':
             compareValuesFr();
             break;
@@ -139,6 +143,22 @@ else
             verifymail2Ang();
             break;
 
+        case 'verifymail1All':
+            verifymail1All();
+            break;
+
+        case 'verifymail2All':
+            verifymail2All();
+            break;
+
+        case 'verifymail1Esp':
+            verifymail1Esp();
+            break;
+
+        case 'verifymail2Esp':
+            verifymail2Esp();
+            break;
+
         case 'compte':
             compte();
             break;
@@ -159,17 +179,24 @@ else
             centreAll();
             break;
 
-            case 'centreAng':
-                centreAng();
-                break;
-            
+        case 'centreAng':
+            centreAng();
+            break;
+
+        case 'rdv':
+            rdv();
+            break;
+
+        case 'rdvForm':
+            rdvForm();
+            break;
         
+        case 'writeValuesCentreForm':
+            writeValuesCentreForm();
+            break;
 
-
+        
 
     }
 }
-
-
-
 ?>

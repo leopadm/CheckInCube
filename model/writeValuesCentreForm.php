@@ -4,7 +4,7 @@ session_start();
 
 function write($nom, $prenom, $mail, $mdp, $genre, $appellation, $date){
     $bdd = new PDO('mysql:host=localhost;dbname=checkincube;charset=utf8','root','root');
-    $str = "INSERT INTO pilote (nom, prenom, mail, mot_de_passe, genre, appellation, date_naissance) VALUES (':nom', ':prenom', ':mail', ':mdp', ':genre', ':appellation', ':date');";
+    $str = "INSERT INTO centre_formation (nom, prenom, mail, mot_de_passe, genre, appellation, date_naissance, nomEntreprise, poste) VALUES (':nom', ':prenom', ':mail', ':mdp', ':genre', ':appellation', ':date', ':nomEntreprise ', ':poste');";
     $sql = $bdd->prepare($str);    
     $sql->bindValue(":nom", $nom, PDO::PARAM_STR);
     $sql->bindValue(":prenom", $prenom, PDO::PARAM_STR);
@@ -13,12 +13,13 @@ function write($nom, $prenom, $mail, $mdp, $genre, $appellation, $date){
     $sql->bindValue(":genre", $genre, PDO::PARAM_STR);
     $sql->bindValue(":appellation", $appellation, PDO::PARAM_STR);
     $sql->bindValue(":date", $date, PDO::PARAM_INT);
+    $sql->bindValue(":nomEntreprise", $nomEntreprise, PDO::PARAM_STR);
+    $sql->bindValue(":poste", $poste, PDO::PARAM_STR);
     $sql->execute();
 }
 
-
-if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['mdp']) && isset($_POST['mail'])){
-    if (($_POST['sexe'] == 'homme')) {     
+if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['mail']) && !empty($_POST['mdp']) && !empty($_POST['mdp2'])){
+    if ($_POST['sexe'] == 'homme') {     
         if ($_POST['mdp'] == $_POST['mdp2']){
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
@@ -26,18 +27,21 @@ if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['mdp']) && i
             $mail = $_POST['mail'];
             $genre = 'homme';
             $appellation = 'M.';
-            write($nom, $prenom, $mail, $mdp, $genre, $appellation);
+            $date = $_POST['dateNaissance'];
+            $nomEntreprise = $_POST['nomEntreprise'];
+            $poste = $_POST['poste'];
+
+            write($nom, $prenom, $mail, $mdp, $genre, $appellation, $date, $nomEntreprise, $poste);
 
             $_SESSION['prenom'] = $prenom;
             $_SESSION['nom'] = $nom;
             $_SESSION['mail'] = $mail;
             $_SESSION['appellation'] = $appellation;
 
-            header('Location: /index.php?=confirmaccountAng');
+            header('Location: /index.php?page=confirmaccountFr');
             exit();
         }
-    } 
-    elseif ($_POST['civilite'] == 'Mlle') {
+    }elseif ($_POST['civilite'] == 'Mlle') {
         if ($_POST['mdp'] == $_POST['mdp2']){
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
@@ -45,19 +49,20 @@ if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['mdp']) && i
             $mail = $_POST['mail'];
             $genre = 'femme';
             $appellation = 'Mlle';
-            write($nom, $prenom, $mail, $mdp, $genre, $appellation);
+            $date = $_POST['dateNaissance'];
+
+            $bdd = connectBDD();
+            write($nom, $prenom, $mail, $mdp, $genre, $appellation, $date, $nomEntreprise, $poste);
 
             $_SESSION['prenom'] = $prenom;
             $_SESSION['nom'] = $nom;
             $_SESSION['mail'] = $mail;
             $_SESSION['appellation'] = $appellation;
 
-            header('Location: /index.php?=confirmaccountAng');
+            header('Location: /index.php?page=confirmaccountFr');
             exit();
-        }       
-    }
-
-    elseif ($_POST['civilite'] == 'Mme') {
+        }     
+    }elseif ($_POST['civilite'] == 'Mme') {
         if ($_POST['mdp'] == $_POST['mdp2']){
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
@@ -65,17 +70,20 @@ if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['mdp']) && i
             $mail = $_POST['mail'];
             $genre = 'femme';
             $appellation = 'Mme';
-            write($nom, $prenom, $mail, $mdp, $genre, $appellation);
+            $date = $_POST['dateNaissance'];
+
+            $bdd = connectBDD();
+            write($nom, $prenom, $mail, $mdp, $genre, $appellation, $date, $nomEntreprise, $poste);
 
             $_SESSION['prenom'] = $prenom;
             $_SESSION['nom'] = $nom;
             $_SESSION['mail'] = $mail;
             $_SESSION['appellation'] = $appellation;
 
-            header('Location: /index.php?=confirmaccountAng');
+            header('Location: /index.php?page=confirmaccountCF');
             exit();
-        }           
-    }     
+        }         
+    }
 }
 
 else{
@@ -88,29 +96,42 @@ else{
 
     if (empty($prenom)){
         echo "<script type='text/javascript'> alert('Pas de prénom saisi. <br/> Veuillez saisir un prénom.')";
-        header('Location: index.php?page=inscription_piloteFr');
+        header('Location: index.php?page=inscription_centreForm');
+        exit();
     }
 
     elseif (empty($nom)){
         echo "<script type='text/javascript'> alert('Pas de nom saisi. <br/> Veuillez saisir un nom.')";
-        header('Location: index.php?page=inscription_piloteFr');
+        header('Location: index.php?page=inscription_centreForm');
+        exit();
     }
 
     elseif (empty($mail)){
         echo "<script type='text/javascript'> alert('Pas de mail saisi. <br/> Veuillez saisir un mail.')";
-        header('Location: index.php?page=inscription_piloteFr');
+        header('Location: index.php?page=inscription_centreForm');
+        exit();
     }
 
     elseif (empty($mdp)){
         echo "<script type='text/javascript'> alert('Pas de mot de passe saisi. <br/> Veuillez saisir un mot de passe.')";
-        header('Location: index.php?page=inscription_piloteFr');
+        header('Location: index.php?page=inscription_centreForm');
+        exit();
     }
+
+    elseif (empty($nomEntreprise)){
+        echo "<script type='text/javascript'> alert('Pas de nom d'entreprise saisi. <br/> Veuillez saisir un nom d'entreprise.')";
+        header('Location: index.php?page=inscription_centreForm');
+        exit();
+    }
+
 
     elseif($mdp !== $mdp2){
         echo "<script type='text/javascript'> alert('Les mots de passe saisis ne sont pas identiques. <br/> Veuillez saisir des mots de passe identiques.')";
-        header('Location: index.php?page=inscription_piloteFr');
+        header('Location: index.php?page=inscription_centreForm');
+        exit();
     }
 
 }
 
+?>
 
