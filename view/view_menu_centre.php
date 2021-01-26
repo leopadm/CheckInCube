@@ -15,15 +15,18 @@
 <body>
 
 <div id="bouton">
-  <button class="favorite styled" type="button" href="index.php?page=recherche">
-        Recherche
-      </button>
-  <button class="favorite styled" type="button" href="index.php?page=recherche">
-        Analyses des pilotes
-      </button>
-  <button class="favorite styled" type="button" href="index.php?page=recherche">
-        Rendez-vous prévu
-      </button>
+  <a href="index.php?page=recherche">
+  <div class="favorite styled">
+    Recherche
+  </div></a>
+  <a href="index.php?page=recherche">
+  <div class="favorite styled">
+    Analyses des pilotes
+  </div></a>
+  <a href="index.php?page=recherche">
+  <div class="favorite styled">
+    Rendez-vous prévu
+  </div></a>
 </div>
 
 </body>

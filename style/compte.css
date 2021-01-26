@@ -11,6 +11,7 @@ body{
 
 
 .styled {
+    text-decoration: none;
     font-family: Montserrat, sans-serif;
 	width: 200px;
 	height: 120px;
@@ -25,6 +26,8 @@ body{
     margin-top: auto;
     margin-bottom: auto;
     vertical-align: middle;
+    text-align: center;
+    display: table-cell;
 }
 
 .styled:hover {   
@@ -112,4 +115,9 @@ body{
     justify-content: space-between;
     margin-left: 10%;
     margin-right: 10%;
+}
+
+#bouton a
+{
+    text-decoration: none;
 }

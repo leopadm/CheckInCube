@@ -11,7 +11,7 @@
     top: 0;
     width: 100%;
     height: 100px;
-    margin: 0;
+    margin-bottom: 80px;
     display: inline-block;
 }
 
@@ -81,22 +81,16 @@ li{
 }
 
 body{
-    background: url("../domagoj-cosic-nv5uZB7ReyY-unsplash.jpg");
+    background: url("/Ressources/Medias/Image26.jpg");
     background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     min-height: 100vh;
 }
 
-h2{
-    width: 100%;
-    text-align: center;
-    color: #293133;
-    position: absolute;
-    background-color: rgba(255,255,255,0.8);
-}
 
 .wrapper{
-    position: relative;
-    top: 50%;
+    margin-top: 15%;
     width: 100%;
     padding: 0 20px;
     color: #293133;
@@ -131,10 +125,10 @@ h2{
 /*Style boutons radio*/
 @keyframes click-wave {
     0% {
+        position: relative;
         height: 20px;
         width: 20px;
         opacity: 0.35;
-        position: relative;
     }
     100% {
         height: 200px;
@@ -222,22 +216,19 @@ h2{
 
 /* style bouton */
 #submit {
-    margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px;
     font-family: Montserrat, sans-serif;
-    font-size: large;
-    font-weight: bolder;
-    border: 2px solid #000000;
-    border-radius: 10px;
+    font-size: small;
+    border: 1px solid #FECB00;
     background-color: #FECB00;
-    color: #000000;
-    height: 10%;
-    margin-left: 0%;
+    color: dimgrey;
+    height: 5%;
 }
 
 
 #submit:hover {
-    transform: scale(1.1);
     border-radius: 10px;
     transition: 0.5s;
 }
@@ -255,7 +246,3 @@ h2{
 ::-ms-input-placeholder{
     color: dimgrey;
 }
-
-/*style du bouton valider*/
-
-

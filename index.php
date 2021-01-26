@@ -39,8 +39,12 @@ else
             choixCategorieAng();
             break;
 
-        case 'inscription_centreForm':
-            inscription_centreForm();
+        case 'inscription_CF':
+            inscription_CF();
+            break;
+        
+        case 'inscription_CR':
+            inscription_CR();
             break;
 
         case 'inscription_piloteFr':
@@ -109,6 +113,10 @@ else
 
         case 'confirmaccountCF':
             confirmaccountCF();
+            break;
+
+        case 'confirmaccountCR':
+            confirmaccountCR();
             break;
 
         case 'compareValuesFr':
@@ -191,11 +199,21 @@ else
             rdvForm();
             break;
         
-        case 'writeValuesCentreForm':
-            writeValuesCentreForm();
+        case 'writeValuesCF':
+            writeValuesCF();
             break;
 
-        
+        case 'writeValuesCR':
+            writeValuesCR();
+            break;
+
+        case 'recherche':
+            recherche();
+            break;
+
+        case'recherche2':
+            recherche2();
+            break;
 
     }
 }
