@@ -11,11 +11,11 @@
         <p class="liens-footer">
             <a href="test1.php">Accueil</a>
             |
-            <a href="inscription.html">A propos</a>
+            <a href="index.php?page=recherche">A propos</a>
             |
             <a href="inscription.html">Nous contacter</a>
             |
-            <a href="inscription.html">Mentions Légales</a>
+            <a href="index.php?page=viewCGU">Mentions Légales</a>
             |
             <a href="inscription.html">Plan du site</a>
         </p>
@@ -36,7 +36,7 @@
         </div>
         <div>
             <img src="/Ressources/Medias/enveloppe.svg" class="icons">
-            <p><a href="footer.html">contact@psychotech.fr</a></p>
+            <p><a href="footer.html">checkincube@gmail.com</a></p>
         </div>
 
     </div>
@@ -47,12 +47,11 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id facilisis ligula. Quisque sit amet urna sed tortor ultrices ultricies. Cras eleifend tristique nunc et porttitor. Etiam id sem ac ante varius blandit. Morbi tincidunt hendrerit dui. Integer convallis tortor eu sapien sodales ultrices.
         </p>
 
-
         <span class="footer-reseaux">
             <a href="https://www.instagram.com/gab.b/"><img src="/Ressources/Medias/fb.svg" class="footer-reseaux"></a>
             <a href="https://www.instagram.com/gab.b/"><img src="/Ressources/Medias/instagram.svg" class="footer-reseaux"></a>
             <a href="https://www.instagram.com/gab.b/"><img src="/Ressources/Medias/linkedin.svg" class="footer-reseaux"></a>
-</span>
+        </span>
 
     </div>
 

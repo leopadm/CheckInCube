@@ -15,8 +15,8 @@
 
 <a class="window">
     <a class = "btn" href="index.php?page=inscription_piloteFr" >Pilote </a>
-    <a class = "btn1" href="view_inscritpion_entreprise.html" >Centre de recherche  </a>
-    <a class = "btn2" type = "button" >Centre de formation  </a>
+    <a class = "btn1" href="index.php?page=inscription_CR" >Centre de recherche  </a>
+    <a class = "btn2" type = "index.php?page=inscription_CF" >Centre de formation  </a>
 </a>
 
 

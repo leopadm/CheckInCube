@@ -10,36 +10,7 @@
 
 </head>
 
-<header>
-	<nav class="navigation">
-	  <ul>
-	  <li class="accueil"><a href="#">CheckInCube</a></li>
-    <li class="about"><a href="#">Über uns</a></li>
-    <li class="contact"><a href="#" >Kontakt</a></li>
-      <li class="deroulant1"><a href="#">Menü</a>
-          <ul class="sous1">
-            <li><a href="#">meine Konto</a></li>
-            <li><a href="#">Forschung</a></li>
-            <li><a href="#">meine Analysen</a></li>
-            <li><a href="#">meine Geschichte</a></li>
-            <li><a href="#">meine Termine</a></li>
-            <li><a href="#">Orte für Analyse </a></li>
-            <li><a href="#">Ausloggen</a></li>
-          </ul>
-      </li>
-    </ul>
-    <ul>
-      <li class="deroulant"><a href="#">Sprachen </a>
-      		<ul class="sous">
-        		<li><a href="#">Français<img src="France.png" height="40px" width="50px" /></a></li>
-        		<li><a href="#">English<img src="UK.png" height="50px" width="50px" /></a></li>
-        		<li><a href="#">Deutsch<img src="Allemagne.png" height="40px" width="50px" /></a></li>
-        		<li><a href="#">Español<img src="espagne.png" height="40px" width="50px" /></a></li>
-      		</ul>
-    	</li>
-  	</ul>
-  	</nav>
-  	</header>
+<?php require('headerpiloteAll.php'); ?>
 
 <body>
   
@@ -49,18 +20,13 @@
 </div>
 
 <div id="bouton">
-  <button class="favorite styled"
-          type="button" onclick="Message()">
+  <button class="favorite styled" type="button" href="index.php?page=recherche">
         Forschung
       </button>
-      <p><br/></p>
-  <button class="favorite styled"
-          type="button" onclick="Message()">
+  <button class="favorite styled" type="button" href="index.php?page=">
         Analysen
       </button>
-      <p><br/></p>
-  <button class="favorite styled"
-          type="button" onclick="Message()">
+    <button class="favorite styled" type="button" href="index.php?page=">
         Geplanter Termin
       </button>
 </div>

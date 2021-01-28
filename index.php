@@ -39,8 +39,12 @@ else
             choixCategorieAng();
             break;
 
-        case 'inscription_entrepriseFr':
-            inscription_entrepriseFr();
+        case 'inscription_CF':
+            inscription_CF();
+            break;
+        
+        case 'inscription_CR':
+            inscription_CR();
             break;
 
         case 'inscription_piloteFr':
@@ -107,6 +111,14 @@ else
             confirmAccountAng();
             break;
 
+        case 'confirmaccountCF':
+            confirmaccountCF();
+            break;
+
+        case 'confirmaccountCR':
+            confirmaccountCR();
+            break;
+
         case 'compareValuesFr':
             compareValuesFr();
             break;
@@ -139,6 +151,22 @@ else
             verifymail2Ang();
             break;
 
+        case 'verifymail1All':
+            verifymail1All();
+            break;
+
+        case 'verifymail2All':
+            verifymail2All();
+            break;
+
+        case 'verifymail1Esp':
+            verifymail1Esp();
+            break;
+
+        case 'verifymail2Esp':
+            verifymail2Esp();
+            break;
+
         case 'compte':
             compte();
             break;
@@ -159,17 +187,46 @@ else
             centreAll();
             break;
 
-            case 'centreAng':
-                centreAng();
-                break;
-            
+        case 'centreAng':
+            centreAng();
+            break;
+
+        case 'rdv':
+            rdv();
+            break;
+
+        case 'rdvForm':
+            rdvForm();
+            break;
         
+        case 'writeValuesCF':
+            writeValuesCF();
+            break;
 
+        case 'writeValuesCR':
+            writeValuesCR();
+            break;
 
+        case 'recherche':
+            recherche();
+            break;
+
+        case 'recherche2':
+            recherche2();
+            break;
+
+        case 'viewCGU':
+            viewCGU();
+            break;
+
+        case 'viewGraph':
+            viewGraph();
+            break;
+
+        case 'disconnect':
+            disconnect();
+            break;
 
     }
 }
-
-
-
 ?>
