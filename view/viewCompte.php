@@ -14,11 +14,11 @@
 
 
 <?php 
-$prenom = jean;
-$nom = dupont;
+$prenom = "jean";
+$nom = "dupont";
 $email = "jean.dupont@gmail.com";
 $birthdate = "2000-08-05";
-$civilite = Monsieur;
+$civilite = "Monsieur";
 ?>
     <body>
 
