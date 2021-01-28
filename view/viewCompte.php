@@ -34,6 +34,23 @@ $civilite = "Monsieur";
 
     	</div>
 
+      <div id="form">
+
+      <form method="POST">
+      <label for="prenom">Prénom : </label> <br>
+      <input type="text" id="prenom" name="prenom"><br>
+      <label for="nom">Nom : </label><br>
+      <input type="text" id="nom" name="nom" ><br><br>
+      <label for="email">email : </label> <br>
+      <input type="text" id="email" name="email"><br>
+      <label for="birthday">date d'anniversaire : </label><br>
+      <input type="text" id="birthday" name="birthday" ><br><br>
+      <label for="civilite">Civilité : </label><br>
+      <input type="text" id="civilite" name="civilite" ><br><br>
+      </form>
+
+      </div>
+
     </body>
 
     </html>
