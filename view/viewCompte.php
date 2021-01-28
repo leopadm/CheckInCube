@@ -14,8 +14,8 @@
 
 
 <?php 
-$prenom = 10;
-$nom = 10;
+$prenom = jean;
+$nom = dupont;
 $email = "jean.dupont@gmail.com";
 $birthdate = "2000-08-05";
 $civilite = Monsieur;
