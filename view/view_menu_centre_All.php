@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="icon" type="image/png" href="CerveauAPP.png">
+	<link rel="icon" type="image/png" href="Ressources/Medias/LogoWebSite_1.png">
 	<title>PsychoTech Industries</title>
 	<link rel="stylesheet" type="text/css" href="compte.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">

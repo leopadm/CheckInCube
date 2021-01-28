@@ -15,6 +15,7 @@ require_once('model/RDV.php');
 require_once('model/search.php');
 require_once('model/writeValuesCF.php');
 require_once('model/writeValuesCR.php');
+require_once('model/getID.php');
 
 function home()
 {
@@ -486,7 +487,7 @@ function writeValuesCR()
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
     
-                header('Location: /index.php?page=confirmaccountCR');
+                header('Location: index.php?page=confirmaccountCR');
                 exit();
             }     
         }elseif ($_POST['civilite'] == 'Mme') {
@@ -580,7 +581,8 @@ function confirmAccountFr()
             </body>
             ";
         mailing('[CheckInCube] Création de votre compte', $content, $reception, "$appellation $nom $prenom");
-        require('index.php?page=menu_piloteFr');
+        header('Location: index.php?page=menu_piloteFr');
+        exit();
     
 }
 
@@ -1043,6 +1045,31 @@ function generateRandomString($length = 10)
     return substr(str_shuffle(str_repeat($x='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
 }
 
+function viewCGU()
+{   
+    require('view/viewCGU.php');
+}
 
+function viewGraph()
+{
+    $data1 = getTable('pilote_data');
+    $nom = [];
+    $tdr = [];
+
+    while ($pilote_data = $data1->fetch()) {
+        $data2 = getID(intval($pilote_data['id_pilote']));
+        while ($results = $data2->fetch()) {
+            array_push($nom, $results['nom']);
+            array_push($tdr, $pilote_data['temps_reaction']);
+        }
+    }
+    require('view/viewGraph.php');
+}
+
+function disconnect()
+{
+    session_destroy();
+    home();
+}
 
 ?>

@@ -11,7 +11,7 @@
 
 </head>
 
-<?php require('header.php'); ?>
+<?php require('headerpilote.php'); ?>
 
 <body>
 

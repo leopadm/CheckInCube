@@ -211,8 +211,20 @@ else
             recherche();
             break;
 
-        case'recherche2':
+        case 'recherche2':
             recherche2();
+            break;
+
+        case 'viewCGU':
+            viewCGU();
+            break;
+
+        case 'viewGraph':
+            viewGraph();
+            break;
+
+        case 'disconnect':
+            disconnect();
             break;
 
     }

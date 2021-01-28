@@ -15,7 +15,7 @@
             |
             <a href="inscription.html">Nous contacter</a>
             |
-            <a href="inscription.html">Mentions Légales</a>
+            <a href="index.php?page=viewCGU">Mentions Légales</a>
             |
             <a href="inscription.html">Plan du site</a>
         </p>
@@ -36,7 +36,7 @@
         </div>
         <div>
             <img src="/Ressources/Medias/enveloppe.svg" class="icons">
-            <p><a href="footer.html">contact@psychotech.fr</a></p>
+            <p><a href="footer.html">checkincube@gmail.com</a></p>
         </div>
 
     </div>

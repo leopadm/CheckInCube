@@ -11,10 +11,12 @@
 
 </head>
 
-<?php require('header.php'); ?>
+<?php require('headerpilote.php'); ?>
 
 <body>
+
 <h1>Recherche de pilotes</h1>
+
 <div class="tableContainer">
     <table>
         <form action="index.php?page=recherche2" method="post">
@@ -35,6 +37,11 @@
         </form>
     </table>
 </div>
+
+<div class="blank">
+
+</div>
+
 </body>
 
 <?php require('footer.php'); ?>

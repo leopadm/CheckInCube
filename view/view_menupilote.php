@@ -118,15 +118,18 @@ session_start();
 <body>
 
 <div id="bouton">
-    <button class="favorite styled" type="button" href="index.php?page=recherche">
-        Recherche
-      </button>
-    <button class="favorite styled" type="button" href="index.php?page=">
-        Analyses
-      </button>
-    <button class="favorite styled" type="button" href="index.php?page=">
-        Rendez-vous prévu(s)
-      </button>
+  <a href="index.php?page=recherche">
+  <div class="favorite styled">
+    Recherche
+  </div></a>
+  <a href="index.php?page=recherche">
+  <div class="favorite styled">
+    Analyses des pilotes
+  </div></a>
+  <a href="index.php?page=recherche">
+  <div class="favorite styled">
+    Rendez-vous prévu
+  </div></a>
 </div>
 
 </body>
