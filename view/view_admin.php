@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="icon" type="image/png" href="CerveauAPP.png">
+	<link rel="icon" type="image/png" href="Ressources/Medias/LogoWebSite_1.png">
 	<title>PsychoTech Industries</title>
 	<link rel="stylesheet" type="text/css" href="style/compte.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,7 +19,7 @@
   <div class="favorite styled">
     Recherche
   </div></a>
-  <a href="index.php?page=viewGraph">
+  <a href="index.php?page=recherche">
   <div class="favorite styled">
     Analyses des pilotes
   </div></a>
@@ -30,7 +30,4 @@
 </div>
 
 </body>
-
-<?php require('footer.php'); ?>
-
 </html>

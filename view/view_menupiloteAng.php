@@ -6,7 +6,7 @@ session_start();
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="icon" type="image/png" href="CerveauAPP.png">
+	<link rel="icon" type="image/png" href="Ressources/medias/LogoWebSite_1.png">
 	<title>PsychoTech Industries</title>
 	<link rel="stylesheet" type="text/css" href="style/compte.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,19 +19,17 @@ session_start();
 <body>
 
 <div id="bouton">
-  <button class="favorite styled" type="button" href="index.php?page=recherche">
-        Make an appointment
-      </button>
-  <button class="favorite styled" type="button" href="index.php?page=">
-        Analysis
-      </button>
-  <button class="favorite styled" type="button" href="index.php?page=">
-        Scheduled appointment
-      </button>
+  <a href="index.php?page=recherche">
+  <div class="favorite styled">
+    My analyses
+  </div></a>
+  <a href="index.php?page=recherche">
+  <div class="favorite styled">
+    Scheduled appointment
+  </div></a>
 </div>
 
 </body>
-
 <?php require('footer.php'); ?>
 
 </html>

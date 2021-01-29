@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="icon" type="image/png" href="CerveauAPP.png">
+	<link rel="icon" type="image/png" href="Ressources/Medias/LogoWebSite_1.png">
 	<title>PsychoTech Industries</title>
 	<link rel="stylesheet" type="text/css" href="style/compte.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -15,18 +15,21 @@
 <body>
 
 <div id="bouton">
-  <a href="index.php?page=recherche">
-  <div class="favorite styled">
+<a href="index.php?page=recherche">
+<div class="favourite styled">
     Recherche
-  </div></a>
-  <a href="index.php?page=viewGraph">
-  <div class="favorite styled">
+</div></a>
+<a href="index.php?page=recherche">
+<div class="favorite styled">
     Analyses des pilotes
-  </div></a>
-  <a href="index.php?page=recherche">
-  <div class="favorite styled">
-    Rendez-vous prévu
-  </div></a>
+</div></a>
+<a href="http://localhost/MAMP/phpmyadmin.php?lang=en">
+<div class="favorite styled">
+    PHP MY Admin
+</div></a>
+</div>
+
+<div class="" style="width:100%; height:10%;">
 </div>
 
 </body>
@@ -34,3 +37,9 @@
 <?php require('footer.php'); ?>
 
 </html>
+
+
+
+
+
+

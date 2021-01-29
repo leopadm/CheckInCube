@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="icon" type="image/png" href="CerveauAPP.png">
+	<link rel="icon" type="image/png" href="Ressources/Medias/LogoWebSite_1.png">
 	<title>PsychoTech Industries</title>
 	<link rel="stylesheet" type="text/css" href="compte.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,23 +13,20 @@
 <?php require('headerpiloteAll.php'); ?>
 
 <body>
-  
-<div id="presentation">
-  <p> Willkommen <?php echo $user ?> </p>
-  <p> Danke für die Verwendung CheckInCube </p>
-</div>
 
 <div id="bouton">
-  <button class="favorite styled" type="button" href="index.php?page=recherche">
-        Forschung
-      </button>
-  <button class="favorite styled" type="button" href="index.php?page=">
-        Analysen
-      </button>
-    <button class="favorite styled" type="button" href="index.php?page=">
-        Geplanter Termin
-      </button>
+  <a href="index.php?page=recherche">
+  <div class="favorite styled">
+    Analysen
+  </div></a>
+  <a href="index.php?page=recherche">
+  <div class="favorite styled">
+    Geplanter Termin
+  </div></a>
 </div>
 
 </body>
+
+<?php require('footer.php'); ?>
+
 </html>

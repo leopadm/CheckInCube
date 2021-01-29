@@ -11,13 +11,13 @@
         <p class="liens-footer">
             <a href="test1.php">Accueil</a>
             |
-            <a href="index.php?page=recherche">A propos</a>
+            <a href="index.php?page=apropos">A propos</a>
             |
-            <a href="inscription.html">Nous contacter</a>
+            <a href="index.php?page=contact">Nous contacter</a>
             |
             <a href="index.php?page=viewCGU">Mentions Légales</a>
             |
-            <a href="inscription.html">Plan du site</a>
+            <a href="index.php?page=view_FAQ">Foire aux questions</a>
         </p>
 
         <p class="footer-nom-entreprise">© 2020 PsychoTech</p>
@@ -44,13 +44,13 @@
     <div class="footer-droite">
         <p class="footer-entreprise">
             <span> A propos de l'entreprise</span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id facilisis ligula. Quisque sit amet urna sed tortor ultrices ultricies. Cras eleifend tristique nunc et porttitor. Etiam id sem ac ante varius blandit. Morbi tincidunt hendrerit dui. Integer convallis tortor eu sapien sodales ultrices.
+            La société Infinite Measures existe depuis maintenant plusieurs années. Spécialiste dans la vente de tests psychotechniques, elle est à l’écoute de ses clients et saura vous satisfaire. N’hésitez plus et faites-nous confiance !
         </p>
 
         <span class="footer-reseaux">
-            <a href="https://www.instagram.com/gab.b/"><img src="/Ressources/Medias/fb.svg" class="footer-reseaux"></a>
-            <a href="https://www.instagram.com/gab.b/"><img src="/Ressources/Medias/instagram.svg" class="footer-reseaux"></a>
-            <a href="https://www.instagram.com/gab.b/"><img src="/Ressources/Medias/linkedin.svg" class="footer-reseaux"></a>
+            <a href="#"><img src="/Ressources/Medias/fb.svg" class="footer-reseaux"></a>
+            <a href="#"><img src="/Ressources/Medias/instagram.svg" class="footer-reseaux"></a>
+            <a href="#"><img src="/Ressources/Medias/linkedin.svg" class="footer-reseaux"></a>
         </span>
 
     </div>

@@ -48,9 +48,9 @@
         </p>
 
         <span class="footer-reseaux">
-            <a href="https://www.instagram.com/gab.b/"><img src="/Ressources/Medias/fb.svg" class="footer-reseaux"></a>
-            <a href="https://www.instagram.com/gab.b/"><img src="/Ressources/Medias/instagram.svg" class="footer-reseaux"></a>
-            <a href="https://www.instagram.com/gab.b/"><img src="/Ressources/Medias/linkedin.svg" class="footer-reseaux"></a>
+            <a href="#"><img src="/Ressources/Medias/fb.svg" class="footer-reseaux"></a>
+            <a href="#"><img src="/Ressources/Medias/instagram.svg" class="footer-reseaux"></a>
+            <a href="#"><img src="/Ressources/Medias/linkedin.svg" class="footer-reseaux"></a>
         </span>
 
     </div>

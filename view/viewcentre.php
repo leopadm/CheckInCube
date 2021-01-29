@@ -44,10 +44,9 @@
 <body>
 
 	<div id="lieu">
-		<p> centre de recherche de ... , adresse</p>
-		<p> centre de recherche de ... , adresse</p>
-		<p> centre de recherche de ... , adresse</p>
-		<p> centre de recherche de ... , adresse</p>
+		<p> Aucun centre autour de vous</p>
 	</div>
 
 </body>
+
+</html>

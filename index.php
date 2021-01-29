@@ -227,6 +227,73 @@ else
             disconnect();
             break;
 
+        case 'disconnectAng':
+            disconnectAng();
+            break;
+        
+        case 'disconnectEsp':
+            disconnectEsp();
+            break;
+
+        case 'disconnectAll':
+            disconnectAll();
+            break;
+
+        case 'contact':
+            contact();
+            break;
+
+        case 'apropos':
+            apropos();
+            break;
+        
+        case 'connexionAdmin':
+            connexionAdmin();
+            break;
+
+        case 'viewAdmin':
+            viewAdmin();
+            break;
+
+        case 'compareAdmin':
+            compareAdmin();
+            break;
+
+        case 'view_FAQ':
+            view_FAQ();
+            break;
+    
+        case 'faq_reponse1':
+            faq_reponse1();
+            break;
+
+        case 'faq_reponse2':
+            faq_reponse2();
+            break;
+
+        case 'faq_reponse3':
+            faq_reponse3();
+            break;
+
+        case 'faq_reponse4':
+            faq_reponse4();
+            break;
+
+        case 'faq_reponse5':
+            faq_reponse5();
+            break;
+
+        case 'faq_reponse6':
+            faq_reponse6();
+            break;
+
+        case 'faq_reponse7':
+            faq_reponse7();
+            break;
+
+        case 'viewCompte':
+            viewCompte();
+            break;
     }
 }
 ?>

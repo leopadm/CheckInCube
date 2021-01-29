@@ -118,21 +118,27 @@ session_start();
 <body>
 
 <div id="bouton">
-  <a href="index.php?page=recherche">
-  <div class="favorite styled">
-    Recherche
-  </div></a>
-  <a href="index.php?page=recherche">
-  <div class="favorite styled">
-    Analyses des pilotes
-  </div></a>
-  <a href="index.php?page=recherche">
-  <div class="favorite styled">
+<a href="index.php?page=rdvForm">
+<div class="favourite styled">
+    Prendre Rendez-vous
+</div></a>
+<a href="index.php?page=recherche">
+<div class="favorite styled">
+    Mes analyses
+</div></a>
+<a href="index.php?page=recherche">
+<div class="favorite styled">
     Rendez-vous prévu
-  </div></a>
+</div></a>
+</div>
+
+<div class="" style="width:100%; height:10%;">
 </div>
 
 </body>
+
+<?php require('footer.php'); ?>
+
 </html>
 
 

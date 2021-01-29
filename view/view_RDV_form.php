@@ -71,7 +71,7 @@
             </p>
             <p>
                 <label for="Heure">Heure du rendez-vous </label>
-                <select name ="Heure" id = "Heure">
+                <select name ="heure" id = "Heure">
                     <option value ="1"> 10h-12h </option>
                     <option value ="2"> 12h-14h </option>
                     <option value ="3"> 14h-16h </option>
@@ -89,6 +89,11 @@
 
 </body>
 <style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+
     .form{
         position:absolute;
         top: 38%;

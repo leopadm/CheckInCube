@@ -216,7 +216,8 @@ body{
 
 /* style bouton */
 #submit {
-    margin-left: 25px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px;
     font-family: Montserrat, sans-serif;
     font-size: small;
@@ -224,7 +225,6 @@ body{
     background-color: #FECB00;
     color: dimgrey;
     height: 5%;
-    margin-left: 10%;
 }
 
 

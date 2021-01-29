@@ -14,9 +14,9 @@
         <a href="/index.php?page=home"><img src="Ressources/Medias/LogoWebSite_1.png" alt="Logo" class="LogoWS"></a>
         
         <ul class="Menu">
-			<li><a>Bienvenido <?= $_SESSION['appellation']?> <?=$_SESSION['prenom']?> <?=$_SESSION['nom']?></a></li>
+			<li><a href="index.php?page=menu_piloteEsp">Bienvenido <?= $_SESSION['appellation']?> <?=$_SESSION['prenom']?> <?=$_SESSION['nom']?></a></li>
             <li><a href="index.php?page=categorieConnexion" class="TopText">Vuestro cuenta</a></li>
-            <li><a href="index.php?page=homeEsp" class="TopText">Cerrar sesión</a></li>
+            <li><a href="index.php?page=disconnect" class="TopText">Cerrar sesión</a></li>
         </ul>
     </nav>
 </header>

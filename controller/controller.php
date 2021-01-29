@@ -6,8 +6,8 @@ echo '<script src="https://kit.fontawesome.com/e0550c5f3b.js" crossorigin="anony
       <link rel="icon" type="image/png" href="Ressources/Medias/LogoWebSite_1.png">';
 
 //Disables debugging
-ini_set('display_errors', '0');
-ini_set('display_startup_errors', '0');
+//ini_set('display_errors', '0');
+//ini_set('display_startup_errors', '0');
 
 require_once('model/compareValues.php');
 require_once('model/writeValues.php');
@@ -15,7 +15,15 @@ require_once('model/RDV.php');
 require_once('model/search.php');
 require_once('model/writeValuesCF.php');
 require_once('model/writeValuesCR.php');
+require_once('model/selectWhereID.php');
+require_once('model/admin.php');
+require_once('model/dataPilote.php');
+require_once('model/writeValuesRDV.php');
 require_once('model/getID.php');
+require_once('model/getPiloteWithID.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 function home()
 {
@@ -112,6 +120,11 @@ function connexionFr()
     require('view/viewPageConnexion.php');
 }
 
+function connexionAdmin()
+{
+    require('view/viewConnexionAdmin.php');
+}
+
 function categorieConnexionFr()
 {
     require('view/categorieConnexion.php');
@@ -136,6 +149,7 @@ function writeValuesFr()
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
 
                 header('Location: /index.php?page=confirmaccountFr');
                 exit();
@@ -150,13 +164,13 @@ function writeValuesFr()
                 $appellation = 'Mlle';
                 $date = $_POST['dateNaissance'];
 
-                $bdd = connectBDD();
                 write($nom, $prenom, $mail, $mdp, $genre, $appellation, $date);
 
                 $_SESSION['prenom'] = $prenom;
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
 
                 header('Location: /index.php?page=confirmaccountFr');
                 exit();
@@ -178,6 +192,7 @@ function writeValuesFr()
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
 
                 header('Location: /index.php?page=confirmaccountFr');
                 exit();
@@ -243,6 +258,7 @@ function writeValuesAng()
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
     
                 header('Location: /index.php?=confirmaccountAng');
                 exit();
@@ -262,6 +278,7 @@ function writeValuesAng()
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
     
                 header('Location: /index.php?=confirmaccountAng');
                 exit();
@@ -282,6 +299,7 @@ function writeValuesAng()
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
     
                 header('Location: /index.php?=confirmaccountAng');
                 exit();
@@ -346,6 +364,7 @@ function writeValuesCF()
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
     
                 header('Location: /index.php?page=confirmaccountCF');
                 exit();
@@ -367,6 +386,7 @@ function writeValuesCF()
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
     
                 header('Location: /index.php?page=confirmaccountCF');
                 exit();
@@ -388,6 +408,7 @@ function writeValuesCF()
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
     
                 header('Location: /index.php?page=confirmaccountCF');
                 exit();
@@ -465,6 +486,7 @@ function writeValuesCR()
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
     
                 header('Location: index.php?page=confirmaccountCR');
                 exit();
@@ -486,6 +508,7 @@ function writeValuesCR()
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
     
                 header('Location: index.php?page=confirmaccountCR');
                 exit();
@@ -507,6 +530,7 @@ function writeValuesCR()
                 $_SESSION['nom'] = $nom;
                 $_SESSION['mail'] = $mail;
                 $_SESSION['appellation'] = $appellation;
+                $_SESSION['id'] = getID($nom, $prenom, $mail);
     
                 header('Location: index.php?page=confirmaccountCR');
                 exit();
@@ -580,10 +604,8 @@ function confirmAccountFr()
                 <a style='font-weight:500'><br><br>Cordialement</a>
             </body>
             ";
-        mailing('[CheckInCube] Création de votre compte', $content, $reception, "$appellation $nom $prenom");
-        header('Location: index.php?page=menu_piloteFr');
-        exit();
-    
+    mailing('[CheckInCube] Création de votre compte', $content, $reception, "$appellation $nom $prenom");
+    require('view/view_menupilote.php');
 }
 
 function confirmAccountAng()
@@ -603,8 +625,8 @@ function confirmAccountAng()
                 <a style='font-weight:500'><br><br>Sincerely</a>
             </body>
             ";
-        mailing('[CheckInCube] Creation of your account', $content, $reception, "$appellation $nom $prenom");
-        require('index.php?page=menu_piloteAng');
+    mailing('[CheckInCube] Creation of your account', $content, $reception, "$appellation $nom $prenom");
+    require('index.php?page=menu_piloteAng');
 }
 
 function confirmaccountCF()
@@ -652,17 +674,17 @@ function confirmaccountCR()
     exit();
 }
 
-function compareValuesFr()
+function compareAdmin()
 {
-
     if(isset($_POST['inputUser']) && isset($_POST['inputPassword'])){
-        $req = getPilote();
+        $req = getAdmin();
         while ($pilote = $req->fetch(PDO::FETCH_ASSOC)) {
-            if ($pilote['mail'] == $_POST['inputUser']){
+            if ($pilote['identifiant'] == $_POST['inputUser']){
                 if ($pilote['mot_de_passe'] == hash("SHA256",$_POST['inputPassword'])) {
                     $codeperso = generateRandomString();
                     $_SESSION['prenom'] = $pilote['prenom'];
                     $_SESSION['nom'] = $pilote['nom'];
+                    /*
                     $_SESSION['appellation'] = $pilote['appellation'];
                     $_SESSION['genre'] = $pilote['genre'];
                     $_SESSION['mail'] = $pilote['mail'];
@@ -687,10 +709,69 @@ function compareValuesFr()
                                 ";
 
                     $_SESSION['codeperso'] = $codeperso;
+                    */
 
-                    mailing('[CheckInCube] Double authentification', $content, $reception, "$appellation $nom $prenom");
+                    //mailing('[CheckInCube] Double authentification', $content, $reception, "$appellation $nom $prenom");
 
-                    header('Location: index.php?page=verifymail1');
+                    viewAdmin();
+                }
+            }
+        }
+    }
+
+    else{
+        $req = compareValues();
+        while($pilote = $req->fetch(PDO::FETCH_ASSOC)) {
+            if ($pilote['mail'] !== $_POST['inputUser']) {
+                echo "<script type='text/javascript'> alert('Identifiant incorrect. <br/> Veuillez saisir un identifiant correct.')";
+                header('Location: index.php?page=connexionFr');
+                exit();
+            }
+        }
+    }
+}
+
+
+
+function compareValuesFr()
+{
+    if(isset($_POST['inputUser']) && isset($_POST['inputPassword'])){
+        $req = getPilote();
+        while ($pilote = $req->fetch(PDO::FETCH_ASSOC)) {
+            if ($pilote['mail'] == $_POST['inputUser']){
+                if ($pilote['mot_de_passe'] == hash("SHA256",$_POST['inputPassword'])) {
+                    $codeperso = generateRandomString();
+                    $_SESSION['prenom'] = $pilote['prenom'];
+                    $_SESSION['nom'] = $pilote['nom'];
+                    $_SESSION['appellation'] = $pilote['appellation'];
+                    $_SESSION['genre'] = $pilote['genre'];
+                    $_SESSION['mail'] = $pilote['mail'];
+                    $_SESSION['id'] = $pilote['id'];
+
+                    $reception = $pilote['mail'];
+                    $prenom = $pilote['prenom'];
+                    $nom = $pilote['nom'];
+                    $appellation= $pilote['appellation'];
+
+                    $content = "
+                                <head>
+                                    <div style='font-family:Montserrat,sans-serif; font-weight:800;'>Procédure de double authentification</div>
+                                </head>
+
+                                <body style='font-family:Montserrat, sans-serif;'>
+                                    <div style='font-weight:500;'></br></br>Bonjour, $appellation $prenom $nom</br></br>Vous recevez ce mail pour vous connecter à votre compte.</br>Ce mail contient un code généré aléatoirement et unique.</br>Veuillez rentrer le code affiché ci-dessous en respectant la typographie.</br></br></div>
+
+                                    <div style='font-weight:800; border: 2px solid black; margin-left:40%; margin-right:40%; width:20%; border-radius:5px; text-align: center;'> $codeperso </div>
+
+                                    <dic style='font-weight:500'></br></br>Cordialement</div>
+                                </body>
+                                ";
+
+                    $_SESSION['codeperso'] = $codeperso;
+
+                    //mailing('[CheckInCube] Double authentification', $content, $reception, "$appellation $nom $prenom");
+
+                    header('Location: index.php?page=menu_piloteFr');
                     exit();
                 }
             }
@@ -722,6 +803,7 @@ function compareValuesAng()
                     $_SESSION['appellation'] = $pilote['appellation'];
                     $_SESSION['genre'] = $pilote['genre'];
                     $_SESSION['mail'] = $pilote['mail'];
+                    $_SESSION['id'] = $pilote['id'];
 
                     $reception = $pilote['mail'];
                     $prenom = $pilote['prenom'];
@@ -744,9 +826,9 @@ function compareValuesAng()
 
                     $_SESSION['codeperso'] = $codeperso;
 
-                    mailing('[CheckInCube] Double authentification', $content, $reception, "$appellation $nom $prenom");
+                    //mailing('[CheckInCube] Double authentification', $content, $reception, "$appellation $nom $prenom");
 
-                    header('Location: index.php?page=verifymail1Ang');
+                    header('Location: index.php?page=menu_piloteAng');
                     exit();
                 }
             }
@@ -778,6 +860,7 @@ function compareValuesEsp()
                     $_SESSION['appellation'] = $pilote['appellation'];
                     $_SESSION['genre'] = $pilote['genre'];
                     $_SESSION['mail'] = $pilote['mail'];
+                    $_SESSION['id'] = $pilote['id'];
 
                     $reception = $pilote['mail'];
                     $prenom = $pilote['prenom'];
@@ -800,9 +883,9 @@ function compareValuesEsp()
 
                     $_SESSION['codeperso'] = $codeperso;
 
-                    mailing('[CheckInCube] Double authentification', $content, $reception, "$appellation $nom $prenom");
+                    //mailing('[CheckInCube] Double authentification', $content, $reception, "$appellation $nom $prenom");
 
-                    header('Location: index.php?page=verifymail1Esp');
+                    header('Location: index.php?page=menu_piloteEsp');
                     exit();
                 }
             }
@@ -834,6 +917,7 @@ function compareValuesAll()
                     $_SESSION['appellation'] = $pilote['appellation'];
                     $_SESSION['genre'] = $pilote['genre'];
                     $_SESSION['mail'] = $pilote['mail'];
+                    $_SESSION['id'] = $pilote['id'];
 
                     $reception = $pilote['mail'];
                     $prenom = $pilote['prenom'];
@@ -858,7 +942,7 @@ function compareValuesAll()
 
                     mailing('[CheckInCube] Double authentification', $content, $reception, "$appellation $nom $prenom");
 
-                    header('Location: index.php?page=verifymail1All');
+                    header('Location: index.php?page=menu_piloteAll');
                     exit();
                 }
             }
@@ -987,7 +1071,24 @@ function verifymail2Esp()
 
 function rdv()
 {
-    priseRDV();
+    $nom = $_POST['lastName'];
+    $prenom = $_POST['firstName'];
+    $mail = $_POST['mail'];
+    $heureRDV = $_POST['heure'];
+    $dateRDV = $_POST['date'];
+    if ($heureRDV == '1')
+    {
+        writeRDV($nom, $prenom, $mail, '10h-12h', $dateRDV);
+    }
+    if ($heureRDV == '2')
+    {
+        writeRDV($nom, $prenom, $mail, '12h-14h', $dateRDV);
+    }
+    if ($heureRDV == '3')
+    {
+        writeRDV($nom, $prenom, $mail, '14h-16h', $dateRDV);
+    }
+    require('view/viewRDV.php');
 }
 
 function rdvForm()
@@ -1011,8 +1112,6 @@ function recherche2()
     require('view/viewRecherche2.php');
 }
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 function mailing($subject, $content, $to_address, $to_name)
 {
     require 'PHPMailer-master/PHPMailer-master/src/Exception.php';
@@ -1052,12 +1151,12 @@ function viewCGU()
 
 function viewGraph()
 {
-    $data1 = getTable('pilote_data');
+    $data1 = getTable();
     $nom = [];
     $tdr = [];
 
     while ($pilote_data = $data1->fetch()) {
-        $data2 = getID(intval($pilote_data['id_pilote']));
+        $data2 = selectWhereID(intval($pilote_data['id_pilote']));
         while ($results = $data2->fetch()) {
             array_push($nom, $results['nom']);
             array_push($tdr, $pilote_data['temps_reaction']);
@@ -1071,5 +1170,115 @@ function disconnect()
     session_destroy();
     home();
 }
+
+function disconnectAng()
+{
+    session_destroy();
+    homeAng();
+}
+
+function disconnectEsp()
+{
+    session_destroy();
+    homeEsp();
+}
+
+function disconnectAll()
+{
+    session_destroy();
+    homeAll();
+}
+
+function contact()
+{
+    require('view/viewContact.php');
+}
+
+function apropos()
+{
+    require('view/apropos.php');
+}
+
+function viewAdmin()
+{
+    require('view/viewAdmin.php');
+}
+
+function view_FAQ()
+{
+    require('view/viewFAQ.php');
+}
+
+function faq_reponse1()
+{
+    require('view/view_faq_reponse1.php');
+}
+
+function faq_reponse2()
+{
+    require('view/view_faq_reponse2.php');
+}
+
+function faq_reponse3()
+{
+    require('view/view_faq_reponse3.php');
+}
+
+function faq_reponse4()
+{
+    require('view/view_faq_reponse4.php');
+}
+
+function faq_reponse5()
+{
+    require('view/view_faq_reponse5.php');
+}
+
+function faq_reponse6()
+{
+    require('view/view_faq_reponse6.php');
+}
+
+function faq_reponse7()
+{
+    require('view/view_faq_reponse7.php');
+}
+
+function viewCompte()
+{
+    $req = getPiloteWithID($_SESSION['id']);
+    while($pilote = $req->fecth(PDO::FETCH_ASSOC))
+    {
+        $id = $pilote['id'];
+        $prenom = $pilote['prenom'];
+        $nom = $pilote['nom'];
+        $mail = $pilote['mail'];
+        $date = $pilote['date_naissance'];
+        $genre = $pilote['genre'];
+        $appellation['appellation'];
+    }
+    require('view/viewCompte.php');
+}
+
+function changeData()
+{
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $mail = $_POST['mail'];
+    $date = $_POST['date'];
+    $genre = $_POST['genre'];
+    $appellation = $_POST['appellation'];
+    write($nom, $prenom, $mail, $genre, $appellation, $date);
+    $_SESSION['nom'] = $nom;
+    $_SESSION['prenom'] = $prenom;
+    $_SESSION['mail'] = $mail;
+    $_SESSION['genre'] = $genre;
+    $_SESSION['date'] = $date;
+    $_SESSION['appellation'] = $appellation;
+    menu_piloteFr();
+}
+
+
+
 
 ?>

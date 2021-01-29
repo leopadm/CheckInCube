@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: Montserrat, sans-serif;
+}
+
+
+
+body{
+    background: url("Ressources/Medias/Image28.png") no-repeat top center;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+
+.wrapper{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 7em 20px;
+}
+
+.formulaire-contact{
+    max-width: 550px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.8);
+    padding: 30px;
+    border-radius:10px;
+    display: flex;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.13);
+}
+
+.informations{
+    display: flex;
+    flex-direction: column;
+    margin-right: 4%;
+}
+
+.informations,
+.message{
+    width: 48%;
+}
+
+.informations .input,
+.message textarea{
+    margin: 10px 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #FECB00;
+    padding: 10px;
+    color: #293133;
+    width: 100%;
+}
+
+.message textarea{
+    height: 212px;
+}
+
+::-webkit-input-placeholder{
+    color: dimgrey;
+}
+
+::-moz-input-placeholder{
+    color: dimgrey;
+}
+
+::-ms-input-placeholder{
+    color: dimgrey;
+}
+
+.btn{
+    background: #FECB00;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color:dimgrey;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px){
+    .formulaire-contact{
+        flex-direction: column;
+    }
+    .message textarea{
+        height: 80px;
+    }
+    .informations,
+    .message{
+        width: 100%;
+    }
+}
