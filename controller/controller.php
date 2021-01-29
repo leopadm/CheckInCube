@@ -6,8 +6,8 @@ echo '<script src="https://kit.fontawesome.com/e0550c5f3b.js" crossorigin="anony
       <link rel="icon" type="image/png" href="Ressources/Medias/LogoWebSite_1.png">';
 
 //Disables debugging
-//ini_set('display_errors', '0');
-//ini_set('display_startup_errors', '0');
+ini_set('display_errors', '0');
+ini_set('display_startup_errors', '0');
 
 require_once('model/compareValues.php');
 require_once('model/writeValues.php');
