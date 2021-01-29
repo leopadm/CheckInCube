@@ -1,5 +1,5 @@
 <?php
-function getDataPilote($id, $nom, $prenom, $mail)
+function getDatasPilote($id, $nom, $prenom, $mail)
 {
     $id = "%$id%";
     $nom = "%$nom%";

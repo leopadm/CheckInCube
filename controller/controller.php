@@ -1108,7 +1108,7 @@ function recherche2()
     $prenom = $_POST['prenomR'];
     $mail = $_POST['mailR'];
     $date = $_POST['dateR'];
-    $req = getDataPilote($id, $nom, $prenom, $mail);
+    $req = getDatasPilote($id, $nom, $prenom, $mail);
     require('view/viewRecherche2.php');
 }
 
