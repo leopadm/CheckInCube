@@ -30,6 +30,11 @@ function home()
     require('view/viewHomeFr.php');
 }
 
+function homeAng()
+{
+    require('view/viewHomeAng.php');
+}
+
 function homeAll()
 {
     require('view/viewHomeAll.php');
@@ -1247,7 +1252,7 @@ function faq_reponse7()
 function viewCompte()
 {
     $req = getPiloteWithID($_SESSION['id']);
-    while($pilote = $req->fecth(PDO::FETCH_ASSOC))
+    while($pilote = $req->fetch(PDO::FETCH_ASSOC))
     {
         $id = $pilote['id'];
         $prenom = $pilote['prenom'];
